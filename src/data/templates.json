@@ -1,0 +1,142 @@
+{
+  "week1": {
+    "title": "الأسبوع 1: ساعة في اليوم",
+    "part": 7,
+    "rows": [
+      { "time": "25 دقيقة", "minutes": 25, "what": "Nicos Weg", "kind": "nicos" },
+      {
+        "time": "10 دقايق",
+        "minutes": 10,
+        "what": "نطق (من الاتنين للخميس)",
+        "kind": "pronunciation",
+        "weekdays": [1, 2, 3, 4]
+      },
+      {
+        "time": "25 دقيقة",
+        "minutes": 25,
+        "what": "مع Claude: قاعدة صغيرة، و10 كلمات من جزء 24، وكتابة قصيرة، وكلام",
+        "kind": "claude"
+      }
+    ]
+  },
+  "hour": {
+    "title": "يوم الساعة",
+    "part": 4,
+    "rows": [
+      {
+        "time": "0–15",
+        "minutes": 15,
+        "what": "Anki: المراجعة وكلمات جديدة. يوم امتحان الكلية: مراجعة بس، من غير كلمات جديدة. في الأسبوع 1 الكلمات بتيجي في الشات (جزء 24)",
+        "kind": "anki"
+      },
+      {
+        "time": "15–40",
+        "minutes": 25,
+        "what": "درس Nicos Weg: أول مرة من غير ترجمة، بعدين بالترجمة، بعدين التمارين",
+        "kind": "nicos"
+      },
+      { "time": "40–45", "minutes": 5, "what": "Shadowing على حوار الدرس", "kind": "shadowing" },
+      {
+        "time": "45–55",
+        "minutes": 10,
+        "what": "يوم كتابة (5 جمل وClaude يصححها)، ويوم كلام (10 دقايق صوت مع Claude)",
+        "kind": "claude"
+      },
+      { "time": "55–60", "minutes": 5, "what": "رسالة المتابعة (جزء 14)", "kind": "followup" }
+    ]
+  },
+  "ninety": {
+    "title": "يوم الساعة ونص",
+    "part": 4,
+    "rows": [
+      { "time": "0–15", "minutes": 15, "what": "Anki", "kind": "anki" },
+      { "time": "15–50", "minutes": 35, "what": "Nicos Weg: درس أو اتنين", "kind": "nicos" },
+      {
+        "time": "50–65",
+        "minutes": 15,
+        "what": "قواعد مع Claude: شرح قصير، وبعده 10 أسئلة تجاوبها من دماغك",
+        "kind": "claude"
+      },
+      { "time": "65–75", "minutes": 10, "what": "Shadowing", "kind": "shadowing" },
+      { "time": "75–85", "minutes": 10, "what": "كلام أو كتابة، يوم ده ويوم ده", "kind": "claude" },
+      { "time": "85–90", "minutes": 5, "what": "المتابعة", "kind": "followup" }
+    ]
+  },
+  "gym": {
+    "title": "يوم الجيم، ساعتين",
+    "part": 4,
+    "rows": [
+      { "time": "12:00–12:20", "minutes": 20, "what": "Anki", "kind": "anki" },
+      { "time": "12:20–13:00", "minutes": 40, "what": "Nicos Weg: درس جديد أو اتنين", "kind": "nicos" },
+      { "time": "13:00–13:15", "minutes": 15, "what": "قواعد: استرجاع وتمارين مع Claude", "kind": "claude" },
+      { "time": "13:15–13:30", "minutes": 15, "what": "استماع وShadowing", "kind": "listening" },
+      {
+        "time": "13:30–13:50",
+        "minutes": 20,
+        "what": "كلام بالصوت مع Claude، بأسئلة على شكل الامتحان",
+        "kind": "claude"
+      },
+      { "time": "13:50–14:00", "minutes": 10, "what": "كراسة الأخطاء والمتابعة", "kind": "followup" }
+    ]
+  },
+  "nogym": {
+    "title": "اليوم اللي من غير جيم، 3 ساعات",
+    "part": 4,
+    "rows": [
+      { "time": "09:00–09:20", "minutes": 20, "what": "Anki", "kind": "anki" },
+      { "time": "09:20–10:05", "minutes": 45, "what": "Nicos Weg: درس أو اتنين", "kind": "nicos" },
+      { "time": "10:05–10:10", "minutes": 5, "what": "راحة", "kind": "rest" },
+      { "time": "10:10–10:30", "minutes": 20, "what": "قواعد مع Claude: تمارين مخلوطة", "kind": "claude" },
+      {
+        "time": "10:30–10:55",
+        "minutes": 25,
+        "what": "كتابة على شكل امتحان جوته، بعدين التصحيح، بعدين **تكتبها تاني**",
+        "kind": "claude"
+      },
+      { "time": "10:55–11:00", "minutes": 5, "what": "تسجيل الأخطاء", "kind": "mistakes" },
+      {
+        "time": "17:00–17:25",
+        "minutes": 25,
+        "what": "استماع: فيديو أو بودكاست من غير ترجمة",
+        "kind": "listening",
+        "evening": true
+      },
+      { "time": "17:25–17:35", "minutes": 10, "what": "Shadowing", "kind": "shadowing", "evening": true },
+      {
+        "time": "17:35–17:55",
+        "minutes": 20,
+        "what": "كلام بالصوت مع Claude، أو حصة المدرس لو موجودة",
+        "kind": "claude",
+        "evening": true
+      },
+      { "time": "17:55–18:00", "minutes": 5, "what": "المتابعة", "kind": "followup", "evening": true }
+    ]
+  },
+  "four": {
+    "title": "يوم الـ4 ساعات",
+    "part": 4,
+    "base": "nogym",
+    "rows": [
+      {
+        "time": "30 دقيقة",
+        "minutes": 30,
+        "what": "قراءة: نصوص على مستواك، أو نصوص قراءة من امتحانات تجريبية مش محجوزة لمحطة.",
+        "kind": "reading"
+      },
+      {
+        "time": "30 دقيقة",
+        "minutes": 30,
+        "what": "لجزء واحد من الامتحان بالتوقيت، أو درس Nicos Weg زيادة.",
+        "kind": "exam"
+      }
+    ]
+  },
+  "small": {
+    "title": "يوم صغير",
+    "part": 15,
+    "rows": [
+      { "time": "15 دقيقة", "minutes": 15, "what": "Anki", "kind": "anki" },
+      { "time": "10 دقايق", "minutes": 10, "what": "استماع", "kind": "listening" }
+    ]
+  }
+}

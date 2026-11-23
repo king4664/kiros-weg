@@ -1,4 +1,5 @@
 import type { Theme } from '../bg/background';
+import type { Overlays } from '../app/overlays';
 import type { RouteId } from '../app/router';
 
 export interface ScreenContext {
@@ -7,6 +8,8 @@ export interface ScreenContext {
   systemReducedMotion(): boolean;
   /** بيتنادي لما الألوان أو الوقت يتغيروا. بيرجّع دالة للإلغاء. */
   onTheme(fn: (t: Theme) => void): () => void;
+  /** التايمر الكبير، ودقيقة الهدوء */
+  overlays: Overlays;
 }
 
 export interface Screen {

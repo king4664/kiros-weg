@@ -1015,6 +1015,443 @@ a[href^='tel:'] bdi {
   margin: 0;
 }
 
+/* النهارده */
+.ghost-btn,
+.chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 14px;
+  border-radius: 14px;
+  border: 1.5px solid rgb(var(--accent) / 0.55);
+  background: transparent;
+  color: rgb(var(--ink));
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.chip-btn .icon {
+  color: rgb(var(--accent));
+}
+.ghost-btn:hover,
+.chip-btn:hover {
+  background: rgb(var(--accent) / 0.1);
+}
+button.btn {
+  border: 0;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn.big {
+  min-height: 52px;
+  padding: 10px 28px;
+  font-size: 18px;
+  border-radius: 18px;
+}
+
+.hero-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.hero-text {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.today-hero .ghost-btn {
+  justify-self: start;
+}
+
+.ring {
+  position: relative;
+  flex: none;
+  width: 84px;
+  height: 84px;
+}
+.ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.ring-bg,
+.ring-fg {
+  fill: none;
+  stroke-width: 7;
+}
+.ring-bg {
+  stroke: rgb(var(--ink) / 0.14);
+}
+.ring-fg {
+  stroke: rgb(var(--accent));
+  stroke-linecap: round;
+  transition: stroke-dashoffset var(--mid) var(--ease);
+}
+.ring-text {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  line-height: 1.1;
+}
+.ring-text strong {
+  font-size: 20px;
+}
+.ring-text small {
+  font-size: 12px;
+  color: rgb(var(--muted));
+}
+
+.daytype {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.daytype .choice-body {
+  min-height: 76px;
+  gap: 2px;
+  font-size: 15px;
+}
+.daytype small {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.special {
+  border-inline-start: 4px solid rgb(var(--accent));
+}
+
+.tasks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+.task {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid rgb(var(--ink) / 0.09);
+}
+.task:first-child {
+  border-top: 0;
+}
+.task-check {
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  accent-color: rgb(var(--accent));
+  cursor: pointer;
+}
+/* مساحة اللمس 44px حوالين الـcheckbox */
+.task-hit {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: -8px -9px 0;
+  cursor: pointer;
+}
+.task-body {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+.task-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(var(--muted));
+}
+.task-what {
+  overflow-wrap: anywhere;
+}
+.task.done .task-what {
+  color: rgb(var(--muted));
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+.small-day {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  padding-top: 10px;
+  border-top: 1px solid rgb(var(--ink) / 0.09);
+}
+
+.lesson {
+  font-size: 18px;
+  font-weight: 600;
+}
+.lesson-n {
+  color: rgb(var(--accent));
+}
+
+.words {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+.words > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px 12px;
+  padding: 6px 0;
+  border-top: 1px solid rgb(var(--ink) / 0.08);
+}
+.words dt {
+  font-weight: 600;
+}
+.words dd {
+  margin: 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.field {
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+  min-width: 0;
+}
+.field.wide {
+  grid-column: 1 / -1;
+}
+.field input,
+.textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1.5px solid rgb(var(--ink) / 0.2);
+  background: rgb(var(--glass) / 0.7);
+  color: rgb(var(--ink));
+  font: inherit;
+}
+.field input:focus,
+.textarea:focus {
+  border-color: rgb(var(--accent));
+  outline: none;
+}
+.field-check {
+  grid-column: 1 / -1;
+  padding: 0;
+}
+.textarea {
+  resize: vertical;
+  line-height: 1.7;
+}
+.msg-preview {
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--tint);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.messages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.msg {
+  width: 100%;
+  display: grid;
+  gap: 2px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgb(var(--ink) / 0.12);
+  background: var(--tint);
+  color: rgb(var(--ink));
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+.msg:active {
+  transform: scale(0.99);
+}
+
+.sentence-text {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.radio-list {
+  display: grid;
+  gap: 4px;
+}
+.radio-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 44px;
+  padding: 8px 4px;
+  cursor: pointer;
+}
+.radio-row input {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin: 3px 0 0;
+  accent-color: rgb(var(--accent));
+}
+
+/* فوق اللوحة: التايمر، وجملة اليوم، ودقيقة الهدوء. الواجهة بتختفي بهدوء. */
+.app {
+  transition:
+    opacity 400ms var(--ease),
+    visibility 0s linear 0s;
+}
+:root[data-overlay] .app {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 400ms var(--ease),
+    visibility 0s linear 400ms;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: max(20px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom));
+  animation: fade-in 400ms var(--ease) both;
+}
+.overlay[hidden] {
+  display: none;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+.focus-panel,
+.splash-panel,
+.calm-panel {
+  width: min(100%, 460px);
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: 26px 22px;
+  border-radius: 28px;
+  text-align: center;
+  background: rgb(var(--glass) / var(--glass-a));
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  color: rgb(var(--ink));
+  box-shadow: 0 20px 50px -20px rgb(8 10 30 / 0.45);
+}
+.focus-label {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.focus-ring {
+  position: relative;
+  width: min(70vw, 260px);
+  aspect-ratio: 1;
+}
+.focus-ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.focus-ring .ring-bg,
+.focus-ring .ring-fg {
+  stroke-width: 8;
+}
+.focus-ring .ring-fg {
+  transition: stroke-dashoffset 500ms linear;
+}
+.focus-time {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 2px;
+}
+.focus-clock {
+  font-size: clamp(44px, 14vw, 64px);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.focus-state {
+  font-size: 14px;
+  color: rgb(var(--muted));
+}
+.splash-text {
+  font-size: clamp(24px, 7vw, 34px);
+  font-weight: 600;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.calm-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(var(--accent) / 0.55), rgb(var(--accent) / 0.12) 70%);
+  border: 2px solid rgb(var(--accent) / 0.6);
+  animation: breathe 10s ease-in-out 6;
+}
+.calm-circle.still,
+.calm-circle.done {
+  animation: none;
+  transform: scale(0.75);
+}
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(0.55);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+.calm-word {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@media (max-width: 380px) {
+  .daytype {
+    grid-template-columns: 1fr;
+  }
+  .daytype .choice-body {
+    min-height: 56px;
+  }
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 720px) {
   .view {
     padding-top: 16px;

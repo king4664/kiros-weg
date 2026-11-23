@@ -3,7 +3,19 @@ import planMd from '../../german-plan.md?raw';
 import { daysBetween, parseISO, toISO } from '../lib/dates';
 import { allUrls, section, type Block } from '../lib/markdown';
 import { plain } from '../lib/rich';
-import { DECISIONS, LINKS, LINK_GROUPS, MILESTONES, WEEKS, WORDS } from './index';
+import {
+  DECISIONS,
+  LINKS,
+  LINK_GROUPS,
+  MILESTONES,
+  NICOS,
+  PLAN_DAYS,
+  SPECIAL_DAYS,
+  TEMPLATES,
+  WEEKS,
+  WORDS,
+  type TaskRow,
+} from './index';
 
 /** النص الخام لجزء من الخطة */
 function raw(n: number): string {
@@ -197,5 +209,86 @@ describe('القرارات', () => {
     for (const id of ['diagnosis', 'a1-mock', 'a2-mock', 'a2-second', 'simulation']) {
       expect(DECISIONS.checkpoints.find((c) => c.id === id)?.date, id).toBe(byId.get(id));
     }
+  });
+});
+
+describe('قوالب اليوم وأيام جزء 7', () => {
+  const linkIds = new Set(LINKS.map((l) => l.id));
+  const checkRow = (r: TaskRow, part: number, label: string) => {
+    expect(plain(raw(part)), `${label}: ${r.what}`).toContain(plain(r.what));
+    if (r.time) expect(r.time.trim(), label).not.toBe('');
+    for (const id of r.links ?? []) expect(linkIds.has(id), `${label}: ${id}`).toBe(true);
+  };
+
+  it('صفوف جزء 4 زي الجداول بالظبط، والدقايق صح', () => {
+    const t = tables(4).slice(1);
+    const ids = ['hour', 'ninety', 'gym', 'nogym'] as const;
+    ids.forEach((id, i) => {
+      const rows = t[i]?.rows ?? [];
+      expect(TEMPLATES[id].rows.map((r) => [r.time, r.what]), id).toEqual(rows);
+      for (const r of TEMPLATES[id].rows) {
+        const [a, b] = (r.time as string).split('–');
+        const toMin = (x: string) => (x.includes(':') ? Number(x.split(':')[0]) * 60 + Number(x.split(':')[1]) : Number(x));
+        expect(r.minutes, `${id} ${r.time}`).toBe(toMin(b as string) - toMin(a as string));
+      }
+    });
+    expect(TEMPLATES.hour.rows.reduce((n, r) => n + (r.minutes ?? 0), 0)).toBe(60);
+    expect(TEMPLATES.ninety.rows.reduce((n, r) => n + (r.minutes ?? 0), 0)).toBe(90);
+    expect(TEMPLATES.gym.rows.reduce((n, r) => n + (r.minutes ?? 0), 0)).toBe(120);
+    expect(TEMPLATES.nogym.rows.reduce((n, r) => n + (r.minutes ?? 0), 0)).toBe(180);
+    expect(TEMPLATES.nogym.rows.filter((r) => r.evening).map((r) => r.time)).toEqual([
+      '17:00–17:25',
+      '17:25–17:35',
+      '17:35–17:55',
+      '17:55–18:00',
+    ]);
+  });
+
+  it('الأسبوع 1، ويوم الـ4 ساعات، واليوم الصغير من كلام الخطة', () => {
+    for (const r of TEMPLATES.week1.rows) checkRow(r, 7, 'week1');
+    for (const r of TEMPLATES.four.rows) checkRow(r, 4, 'four');
+    for (const r of TEMPLATES.small.rows) checkRow(r, 15, 'small');
+    expect(TEMPLATES.week1.rows.reduce((n, r) => n + (r.minutes ?? 0), 0)).toBe(60);
+  });
+
+  it('أيام جزء 7 بالحرف وبالترتيب', () => {
+    const items = section(planMd, 7).blocks.flatMap((b) => (b.t === 'list' ? b.items : []));
+    expect(PLAN_DAYS).toHaveLength(items.length);
+    PLAN_DAYS.forEach((d, i) => {
+      expect(`**${d.label}:** ${d.text}`).toBe(items[i]?.text);
+      expect(isISO(d.date)).toBe(true);
+      if (i > 0) expect(daysBetween(parseISO(PLAN_DAYS[i - 1]?.date as string), parseISO(d.date))).toBe(1);
+      if (d.lessons) {
+        const nums = d.text.match(/درس ([\d و]+)/)?.[1]?.match(/\d+/g)?.map(Number) ?? [];
+        expect([Math.min(...nums), Math.max(...nums)], d.date).toEqual(d.lessons);
+      }
+    });
+    expect(PLAN_DAYS[0]?.date).toBe('2026-11-23');
+  });
+
+  it('الأيام المميزة: مهامها من الخطة، وروابطها موجودة', () => {
+    for (const s of SPECIAL_DAYS) {
+      expect(isISO(s.date)).toBe(true);
+      for (const r of s.tasks ?? []) {
+        const inPlan = [7, 9, 13].some((p) => plain(raw(p)).includes(plain(r.what)));
+        expect(inPlan, r.what).toBe(true);
+        for (const id of r.links ?? []) expect(linkIds.has(id), id).toBe(true);
+      }
+      if (s.checkpoint) {
+        const cp = DECISIONS.checkpoints.find((c) => c.id === s.checkpoint);
+        expect(cp?.date, s.date).toBe(s.date);
+      }
+    }
+  });
+
+  it('أسماء دروس A1: 76 درس، وأولهم زي ملاحظات جزء 6', () => {
+    expect(NICOS.A1).toHaveLength(76);
+    expect(new Set(NICOS.A1).size).toBe(76);
+    for (const name of ['Hallo!', 'Kein Problem!', 'Tschüss!', 'Von A bis Z']) expect(raw(6)).toContain(name);
+    expect(NICOS.A1.slice(0, 4)).toEqual(['Hallo!', 'Kein Problem!', 'Tschüss!', 'Von A bis Z']);
+  });
+
+  it('كل محطة ليها اسم قصير', () => {
+    for (const m of MILESTONES) expect(m.short.trim(), m.id).not.toBe('');
   });
 });

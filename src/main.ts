@@ -1,6 +1,7 @@
 import './styles/main.css';
 import { Background, type Theme } from './bg/background';
 import { grainDataUrl } from './bg/grain';
+import { mountOverlays } from './app/overlays';
 import { mountShell } from './app/shell';
 import { getSettings, onSettings } from './app/settings';
 import { channels, css } from './lib/color';
@@ -56,7 +57,10 @@ window.addEventListener('hashchange', () => {
   }
 });
 
+const overlays = mountOverlays(() => reduced.matches);
+
 mountShell(app, {
+  overlays,
   theme: () => bg.current,
   systemReducedMotion: () => reduced.matches,
   onTheme(fn) {

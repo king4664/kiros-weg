@@ -1,8 +1,12 @@
+import { getLadder, getSentences, setLadder, setSentences, setSplashDate } from '../app/daystore';
+import { esc, rich } from '../app/dom';
 import { icons } from '../app/icons';
 import { getSettings, updateSettings } from '../app/settings';
-import { formatClock } from '../lib/dates';
+import { parseLines, saveSentences, sentenceFor } from '../lib/daily';
+import { formatClock, toISO } from '../lib/dates';
 import { parseOverrides, type Scene } from '../lib/params';
 import { PHASE_NAMES } from '../lib/timeOfDay';
+import { RUNG_NAMES, type LadderSetting } from '../lib/today';
 import type { Screen } from './types';
 
 const SCENE_NAMES: Record<Scene, string> = {
@@ -10,11 +14,23 @@ const SCENE_NAMES: Record<Scene, string> = {
   mountains: 'جبال وضباب',
 };
 
+/** جزء 3 */
+const LADDER_RULE = '**السلّم:** تطلع درجة بس لما تكمّل 6 أيام في الأسبوع. ولو فاتك يومين، تنزل درجة.';
+
+const LADDER_OPTIONS: [string, string, string][] = [
+  ['auto', 'زي مواعيد الخطة', 'ساعة لحد 28 نوفمبر، وساعة ونص لحد 5 ديسمبر، وأنواع الأيام من 6 ديسمبر'],
+  ['0', RUNG_NAMES[0], ''],
+  ['1', RUNG_NAMES[1], ''],
+  ['2', RUNG_NAMES[2], ''],
+  ['3', RUNG_NAMES[3], 'يوم الـ4 ساعات: بعد أسبوعين منتظمين'],
+];
+
 export const settings: Screen = {
   id: 'settings',
   title: 'الإعدادات',
   render(root, ctx) {
     const s = getSettings();
+    const ladder = getLadder();
     const url = parseOverrides(location.search, location.hash);
 
     root.innerHTML = `
@@ -58,8 +74,29 @@ export const settings: Screen = {
       </section>
 
       <section class="card">
-        <h2 class="card-title">درجة السلّم</h2>
-        <p class="muted">هتقدر تغيّرها بإيدك من هنا في المرحلة 4.</p>
+        <h2 class="card-title" id="ladder-label">درجة السلّم</h2>
+        <p class="small">${rich(LADDER_RULE)}</p>
+        <div class="radio-list" role="radiogroup" aria-labelledby="ladder-label">
+          ${LADDER_OPTIONS.map(
+            ([value, label, sub]) => `
+            <label class="radio-row">
+              <input type="radio" name="ladder" value="${value}" ${String(ladder) === value ? 'checked' : ''}>
+              <span><span class="block">${label}</span>${sub ? `<small class="muted block">${sub}</small>` : ''}</span>
+            </label>`,
+          ).join('')}
+        </div>
+        <p class="note">الدرجة مابتعديش مواعيد الخطة: ساعة لحد 28 نوفمبر، وساعة ونص لحد 5 ديسمبر.</p>
+      </section>
+
+      <section class="card">
+        <h2 class="card-title">جمل اليوم</h2>
+        <p class="small muted">كل جملة في سطر. بتتحفظ على موبايلك بس، ومش بتترفع في أي حتة. أول جملة بتبدأ يوم ما تحفظ، وكل يوم الجملة اللي بعدها، وبعد الأخيرة ترجع للأولى.</p>
+        <label class="sr-only" for="sentences">الجمل، كل جملة في سطر</label>
+        <textarea id="sentences" class="textarea" rows="6" dir="auto" data-sentences>${esc((getSentences()?.lines ?? []).join('\n'))}</textarea>
+        <div class="task-actions">
+          <button type="button" class="btn" data-save-sentences>احفظ الجمل</button>
+          <span class="small" data-sentences-status aria-live="polite"></span>
+        </div>
       </section>
 
       <section class="card">
@@ -72,6 +109,28 @@ export const settings: Screen = {
         if (input.checked) updateSettings({ scene: input.value as Scene });
       }),
     );
+    root.querySelectorAll<HTMLInputElement>('input[name="ladder"]').forEach((input) =>
+      input.addEventListener('change', () => {
+        if (input.checked) setLadder((input.value === 'auto' ? 'auto' : Number(input.value)) as LadderSetting);
+      }),
+    );
+
+    root.querySelector('[data-save-sentences]')?.addEventListener('click', () => {
+      const box = root.querySelector<HTMLTextAreaElement>('[data-sentences]');
+      const status = root.querySelector('[data-sentences-status]');
+      const now = new Date();
+      const prev = getSentences();
+      const next = saveSentences(prev, parseLines(box?.value ?? ''), toISO(now), now);
+      setSentences(next);
+      // النهارده إنت فاتح التطبيق أصلًا، فالجملة تظهر لوحدها من بكرة
+      if (!prev && next) setSplashDate(toISO(now));
+      if (status) {
+        status.textContent = next
+          ? `اتحفظت ${next.lines.length} جملة. جملة النهارده: «${sentenceFor(next, now) ?? ''}»`
+          : 'مفيش جمل، فكارت جملة اليوم مش هيظهر.';
+      }
+    });
+
     const motion = root.querySelector<HTMLInputElement>('input[name="motion"]');
     motion?.addEventListener('change', () => updateSettings({ motion: motion.checked }));
 

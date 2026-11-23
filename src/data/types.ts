@@ -62,6 +62,8 @@ export interface Word {
 
 export interface Milestone {
   id: string;
+  /** اسم قصير للعدّاد: «التشخيص بعد 5 أيام» */
+  short: string;
   /** الميعاد بنفس كتابة جزء 1 */
   when: string;
   what: string;
@@ -152,4 +154,69 @@ export interface Decisions {
   parts: ExamPartInfo[];
   checkpoints: Checkpoint[];
   notes: string[];
+}
+
+/* اليوم (المرحلة 3) */
+
+export type TaskKind =
+  | 'anki'
+  | 'nicos'
+  | 'pronunciation'
+  | 'claude'
+  | 'shadowing'
+  | 'listening'
+  | 'reading'
+  | 'followup'
+  | 'mistakes'
+  | 'rest'
+  | 'exam'
+  | 'tutor';
+
+export interface TaskRow {
+  /** الوقت زي ما هو في الخطة: «0–15» أو «12:00–12:20» أو «25 دقيقة» */
+  time?: string;
+  minutes?: number;
+  what: string;
+  kind: TaskKind;
+  /** روابط من links.json */
+  links?: string[];
+  /** أيام الأسبوع اللي المهمة فيها (0 = الحد) */
+  weekdays?: number[];
+  /** الساعة الزيادة بالليل (17–18) في اليوم اللي من غير جيم */
+  evening?: boolean;
+}
+
+export type TemplateId = 'week1' | 'hour' | 'ninety' | 'gym' | 'nogym' | 'four' | 'small';
+
+export interface Template {
+  title: string;
+  /** رقم الجزء في الخطة */
+  part: number;
+  /** يوم الـ4 ساعات = اليوم اللي من غير جيم + الصفوف دي */
+  base?: TemplateId;
+  rows: TaskRow[];
+}
+
+export interface PlanDay {
+  date: ISODate;
+  /** زي ما هو في جزء 7 */
+  label: string;
+  text: string;
+  /** أول وآخر درس في Nicos Weg */
+  lessons?: [number, number];
+}
+
+export interface SpecialDay {
+  date: ISODate;
+  kind: 'compensation' | 'diagnosis' | 'mock';
+  /** القرار اللي في جزء 9 */
+  checkpoint?: string;
+  tasks?: TaskRow[];
+}
+
+export interface NicosLessons {
+  source: string;
+  fetched: ISODate;
+  note: string;
+  A1: string[];
 }
