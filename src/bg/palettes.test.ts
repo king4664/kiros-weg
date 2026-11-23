@@ -52,6 +52,32 @@ describe('التباين على الكروت الزجاج', () => {
     }
   }
 
+  // جوه الكارت فيه أسطح خفيفة: كروت صغيرة (ink 6%)، وتظليل بلون مميز (accent 13%) للحاجة المختارة
+  for (const scene of ['sea', 'mountains'] as const) {
+    for (const { label, w } of samples()) {
+      it(`${scene} / ${label}: الكلام على الأسطح اللي جوه الكارت ≥ ${MIN}`, () => {
+        const pal = blendPalette(w);
+        const ui = blendUi(w);
+        let worst = Infinity;
+        for (const bg of backdrops(pal, scene)) {
+          const card = composite(ui.glass, ui.glassAlpha, bg);
+          // نفس --tint في main.css: بيغمّق في الوضعين
+          const inkTint = ui.mode === 'dark' ? composite([0, 0, 0], 0.16, card) : composite(ui.ink, 0.06, card);
+          const accentTint = composite(ui.accent, 0.13, card);
+          worst = Math.min(
+            worst,
+            contrast(ui.ink, inkTint),
+            contrast(ui.muted, inkTint),
+            contrast(ui.accent, inkTint),
+            // على التظليل المميز بنستخدم الكلام الأساسي بس (مش الباهت)
+            contrast(ui.ink, accentTint),
+          );
+        }
+        expect(worst).toBeGreaterThanOrEqual(MIN);
+      });
+    }
+  }
+
   it('حساب التباين نفسه مظبوط (أبيض وأسود = 21)', () => {
     expect(contrast(hex('#000'), hex('#fff'))).toBeCloseTo(21, 5);
   });

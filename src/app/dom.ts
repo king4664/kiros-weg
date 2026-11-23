@@ -1,8 +1,6 @@
-const ESC: Record<string, string> = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+import { esc } from '../lib/rich';
 
-export function esc(s: string): string {
-  return s.replace(/[&<>"']/g, (c) => ESC[c] as string);
-}
+export { esc, rich } from '../lib/rich';
 
 /** كلام ألماني: LTR جوه <bdi>. */
 export function de(text: string): string {

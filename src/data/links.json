@@ -1,0 +1,434 @@
+{
+  "groups": [
+    { "id": "curriculum", "title": "المنهج" },
+    {
+      "id": "exams",
+      "title": "امتحانات جوته التجريبية",
+      "note": "عددها محدود. ماتستخدمهاش في تمرين السبت. هي للمحطات اللي في جزء 9 بس. وروابط B1 هنجيبها في مارس."
+    },
+    { "id": "pronunciation", "title": "النطق" },
+    { "id": "grammar", "title": "القواعد" },
+    { "id": "input", "title": "استماع وقراءة" },
+    { "id": "backup", "title": "احتياطي" },
+    {
+      "id": "goethe",
+      "title": "جوته إسكندرية",
+      "contact": {
+        "email": "sprache-alexandria@goethe.de",
+        "phone": "01556002872",
+        "phoneHours": "التليفون: الحد والاتنين والخميس 11:00–12:30",
+        "officeHours": "المكتب مفتوح من الحد للتلات 14–18، والأربع والخميس 10–14."
+      }
+    },
+    { "id": "speaking", "title": "كلام مع ناس" },
+    { "id": "germany", "title": "ألمانيا وMittweida" },
+    { "id": "research", "title": "مصادر البحث" }
+  ],
+  "links": [
+    {
+      "id": "nicos-weg",
+      "group": "curriculum",
+      "name": "Nicos Weg من DW",
+      "desc": "العمود الفقري: 76 درس في كل مستوى، وشرح بالعربي في A1 وA2. كل يوم: ادخل على A1 واختار رقم الدرس.",
+      "type": "site",
+      "part": 18,
+      "url": "https://learngerman.dw.com/de/nicos-weg/c-36519687"
+    },
+    {
+      "id": "a1-uebungssatz-01",
+      "group": "exams",
+      "name": "امتحان A1 التجريبي: Übungssatz 01",
+      "desc": "التشخيص: الاستماع والقراءة السبت 28 نوفمبر، والكتابة الحد 29. الإجابات في آخر الملف.",
+      "type": "pdf",
+      "part": 18,
+      "url": "https://www.goethe.de/resources/files/pdf62/start_deutsch_1_uebungssatz_01131111.pdf"
+    },
+    {
+      "id": "a1-uebungssatz-02",
+      "group": "exams",
+      "name": "امتحان A1 التجريبي: Übungssatz 02",
+      "desc": "احتياطي لو امتحان A1 وقع: يتعمل السبت 23 يناير (جزء 9).",
+      "type": "pdf",
+      "part": 18,
+      "url": "https://www.goethe.de/resources/files/pdf134/start_deutsch_1_uebungssatz_02131111211111321631112111111.pdf"
+    },
+    {
+      "id": "a1-modellsatz",
+      "group": "exams",
+      "name": "امتحان A1 الكامل: Modellsatz",
+      "desc": "امتحان A1 التجريبي الكامل السبت 26 ديسمبر، في قعدة واحدة بالتوقيت.",
+      "type": "pdf",
+      "part": 18,
+      "url": "https://www.goethe.de/pro/relaunch/prf/materialien/A1_sd1/sd_1_modellsatz.pdf"
+    },
+    {
+      "id": "a1-practice",
+      "group": "exams",
+      "name": "صفحة تدريب A1 وفيها الصوت",
+      "desc": "صوت جزء الاستماع (Hören). افتحها مع ملف الامتحان التجريبي، زي التشخيص يوم 28 نوفمبر.",
+      "type": "audio",
+      "part": 18,
+      "url": "https://www.goethe.de/ins/tr/de/sta/ist/prf/gzsd1/ueb.html"
+    },
+    {
+      "id": "a1-wortliste",
+      "group": "exams",
+      "name": "قايمة كلمات A1 من جوته",
+      "desc": "حوالي 650 كلمة. الهدف: كلمات A1 لحد آخر ديسمبر (جزء 8).",
+      "type": "pdf",
+      "part": 18,
+      "url": "https://www.goethe.de/pro/relaunch/prf/en/A1_SD1_Wortliste_02.pdf"
+    },
+    {
+      "id": "a2-modellsatz",
+      "group": "exams",
+      "name": "امتحان A2 الكامل: Modellsatz",
+      "desc": "امتحان A2 التجريبي الكامل السبت 13 فبراير، وبعده القرار: B1.1 ولا خطة الطوارئ.",
+      "type": "pdf",
+      "part": 18,
+      "url": "https://www.goethe.de/pro/relaunch/prf/materialien/A2/A2_Modellsatz_Erwachsene.pdf"
+    },
+    {
+      "id": "a2-practice",
+      "group": "exams",
+      "name": "صفحة تدريب A2",
+      "desc": "فيها Modellsatz وÜbungssatz وPrüfungstraining 1 و2 والصوت. الـÜbungssatz للسبت 27 فبراير.",
+      "type": "site",
+      "part": 18,
+      "url": "https://www.goethe.de/en/spr/prf/ueb/pa2.html"
+    },
+    {
+      "id": "yaghi-pronunciation",
+      "group": "pronunciation",
+      "name": "الدرس صفر في النطق: Deutsch mit Ahmad Yaghi",
+      "desc": "بالعربي: الحروف، وحرف R، وä وö وü، وch، والحروف الطويلة والقصيرة. 10 دقايق في اليوم في الأسبوع 1، وكرّر بصوت عالي.",
+      "type": "video",
+      "part": 7,
+      "url": "https://youtu.be/AMYd91vWtpc"
+    },
+    {
+      "id": "aussprachetrainer",
+      "group": "pronunciation",
+      "name": "مدرّب النطق بتاع جوته (Aussprachetrainer)",
+      "desc": "محتاج تسجيل، وكل موضوع نطق بـ3 درجات صعوبة. سجّل وجرّب أول درس السبت 5 ديسمبر.",
+      "type": "site",
+      "part": 18,
+      "url": "https://aussprachetraining.goethe.de/"
+    },
+    {
+      "id": "yaghi-grammar",
+      "group": "grammar",
+      "name": "ملخص قواعد A1 وA2 وB1: Ahmad Yaghi",
+      "desc": "فيديو واحد بالعربي. للشرح لما قاعدة تقف معاك، مش بديل للمنهج.",
+      "type": "video",
+      "part": 18,
+      "url": "https://youtu.be/zdDze6BpE9A"
+    },
+    {
+      "id": "klett-grammatik",
+      "group": "grammar",
+      "name": "Grammatik im Überblick من Klett",
+      "desc": "ملخص قواعد الألماني بالمصطلحات العربي. افتحه لما مصطلح يلخبطك.",
+      "type": "pdf",
+      "part": 18,
+      "url": "https://www.klett-sprachen.de/download/8656/Grammatik%5Fim%5FUeberblick.pdf"
+    },
+    {
+      "id": "schubert",
+      "group": "grammar",
+      "name": "تمارين قواعد Schubert Verlag",
+      "desc": "تمارين زيادة. Claude بيقولك على تمرين معيّن لما تحتاج.",
+      "type": "site",
+      "part": 18,
+      "url": "https://www.schubert-verlag.de/aufgaben/index.htm"
+    },
+    {
+      "id": "deutsch-fuer-dich",
+      "group": "input",
+      "name": "Deutsch für dich من جوته",
+      "desc": "تمارين ببلاش في القواعد والكلمات والاستماع.",
+      "type": "site",
+      "part": 18,
+      "url": "https://www.goethe.de/prj/dfd/de/home.cfm"
+    },
+    {
+      "id": "nachrichtenleicht",
+      "group": "input",
+      "name": "Nachrichtenleicht",
+      "desc": "أخبار بألماني سهل. من آخر A2.",
+      "type": "site",
+      "part": 18,
+      "url": "https://www.nachrichtenleicht.de/"
+    },
+    {
+      "id": "vhs-lernportal",
+      "group": "backup",
+      "name": "vhs-Lernportal",
+      "desc": "كورسات A1 وA2 وB1 ببلاش. التسجيل بالإيميل من غير رقم ألماني، ولسه ماتأكدناش إنه شغال من مصر.",
+      "type": "site",
+      "part": 18,
+      "url": "https://www.vhs-lernportal.de"
+    },
+    {
+      "id": "goethe-alx-courses",
+      "group": "goethe",
+      "name": "كورسات جوته إسكندرية",
+      "desc": "صفحة الكورسات. قرار كورس أبريل المكثف بعد اختبار مارس.",
+      "type": "site",
+      "part": 26,
+      "url": "https://www.goethe.de/ins/eg/de/sta/alx/kur/all.html"
+    },
+    {
+      "id": "goethe-alx-placement",
+      "group": "goethe",
+      "name": "اختبار تحديد المستوى في إسكندرية",
+      "desc": "احجز أول فبراير (750 جنيه) لـ14–18 مارس.",
+      "type": "site",
+      "part": 26,
+      "url": "https://www.goethe.de/ins/eg/de/sta/alx/kur/tst.html"
+    },
+    {
+      "id": "goethe-alx-exams-ar",
+      "group": "goethe",
+      "name": "امتحانات جوته إسكندرية (عربي)",
+      "desc": "افتحها كل أسبوع من أول ديسمبر، لحد ما مواعيد 2027 تنزل.",
+      "type": "site",
+      "part": 26,
+      "url": "https://www.goethe.de/ins/eg/ar/sta/alx/prf.html"
+    },
+    {
+      "id": "goethe-alx-exams-de",
+      "group": "goethe",
+      "name": "امتحانات جوته إسكندرية (ألماني)",
+      "desc": "صفحة تانية عن امتحانات جوته إسكندرية، بالألماني.",
+      "type": "site",
+      "part": 26,
+      "url": "https://www.goethe.de/ins/eg/de/sta/alx/prf/ogf.html"
+    },
+    {
+      "id": "goethe-exams-2026",
+      "group": "goethe",
+      "name": "مواعيد امتحانات جوته 2026",
+      "desc": "مواعيد 2026 كمثال. مواعيد 2027 لسه ماتنشرتش.",
+      "type": "pdf",
+      "part": 26,
+      "url": "https://www.goethe.de/resources/files/pdf359/pruefungen-2026.pdf"
+    },
+    {
+      "id": "goethe-alx-b1",
+      "group": "goethe",
+      "name": "معلومات امتحان B1 في جوته إسكندرية",
+      "desc": "امتحان Goethe-Zertifikat B1 في إسكندرية (جزء 11).",
+      "type": "site",
+      "part": 26,
+      "url": "https://www.goethe.de/ins/eg/ar/m/sta/alx/prf/gzb1/inf.html"
+    },
+    {
+      "id": "italki",
+      "group": "speaking",
+      "name": "مدرسين الألماني على italki",
+      "desc": "مدرس أونلاين: أول حصة تقييم التلات أول ديسمبر، وحصة كل أسبوع من 24 يناير.",
+      "type": "site",
+      "part": 26,
+      "url": "https://www.italki.com/en/teachers/german-speaking"
+    },
+    {
+      "id": "stammtisch-gulf",
+      "group": "speaking",
+      "name": "لقاء دردشة جوته الخليج (Stammtisch)",
+      "desc": "على Zoom، الخميس التالت من كل شهر، حوالي 5 العصر بتوقيت مصر في الشتا. الجاي: 17 ديسمبر 2026.",
+      "type": "site",
+      "part": 26,
+      "url": "https://www.goethe.de/ins/ae/de/ver.cfm?event_id=26425926"
+    },
+    {
+      "id": "mittweida-program",
+      "group": "germany",
+      "name": "Mittweida: صفحة البرنامج",
+      "desc": "Angewandte Informatik، وفيها جدول المواد.",
+      "type": "site",
+      "part": 29,
+      "url": "https://www.hs-mittweida.de/studieren/studienangebote/angewandte-informatik-bachelor/"
+    },
+    {
+      "id": "mittweida-it-security",
+      "group": "germany",
+      "name": "Mittweida: تخصص IT-Sicherheit",
+      "desc": "صفحة التخصص في نفس البرنامج.",
+      "type": "site",
+      "part": 29,
+      "url": "https://www.hs-mittweida.de/studieren/studienangebote/angewandte-informatik-bachelor/it-sicherheit/"
+    },
+    {
+      "id": "mittweida-spo",
+      "group": "germany",
+      "name": "Mittweida: لايحة البرنامج (SPO)",
+      "desc": "لايحة Angewandte Informatik.",
+      "type": "pdf",
+      "part": 29,
+      "url": "https://www.hs-mittweida.de/fileadmin/www/zentrale_elemente/studienangebote/fk_cb/Informatik_B/dokumente/SPO_Angewandte_Informatik_Bachelor.pdf"
+    },
+    {
+      "id": "mittweida-apply",
+      "group": "germany",
+      "name": "Mittweida: التقديم وشهادات اللغة",
+      "desc": "التقديم من 15 أبريل لـ15 مايو 2027.",
+      "type": "site",
+      "part": 29,
+      "url": "https://www.hs-mittweida.de/studieren/bewerben/"
+    },
+    {
+      "id": "mittweida-deadlines",
+      "group": "germany",
+      "name": "Mittweida: مواعيد التقديم",
+      "desc": "مواعيد التقديم على الجامعة.",
+      "type": "site",
+      "part": 29,
+      "url": "https://www.hs-mittweida.de/studium/bewerbung/"
+    },
+    {
+      "id": "studienkolleg-dsh",
+      "group": "germany",
+      "name": "Studienkolleg Mittweida: كورسات الـDSH",
+      "desc": "واسألهم ترفع إيه كإثبات لغة وقت التقديم (جزء 16).",
+      "type": "site",
+      "part": 29,
+      "url": "https://studienkolleg-hs-mittweida.de/deutschkurse-dsh/"
+    },
+    {
+      "id": "housing-apartments",
+      "group": "germany",
+      "name": "السكن: الشقق الفردية في Mittweida",
+      "desc": "سكن الطلبة في Mittweida.",
+      "type": "site",
+      "part": 29,
+      "url": "https://www.studentenwerk-freiberg.de/en/wohnen/in-mittweida-wohnen/wohnformen-mw/einzelapartment-mw/"
+    },
+    {
+      "id": "housing-faq",
+      "group": "germany",
+      "name": "السكن: أسئلة وأجوبة",
+      "desc": "أسئلة وأجوبة عن سكن الطلبة.",
+      "type": "site",
+      "part": 29,
+      "url": "https://www.studentenwerk-freiberg.de/en/wohnen/faq/"
+    },
+    {
+      "id": "housing-portal",
+      "group": "germany",
+      "name": "بوابة التقديم على السكن",
+      "desc": "التقديم على سكن الطلبة.",
+      "type": "site",
+      "part": 29,
+      "url": "https://mietportal.studentenwerk-freiberg.de/ipack4/index.html#home"
+    },
+    {
+      "id": "embassy-visa",
+      "group": "germany",
+      "name": "السفارة الألمانية في القاهرة: ورقة فيزا الدراسة",
+      "desc": "تقديم التأشيرة من 10 لـ15 يوليو 2027.",
+      "type": "pdf",
+      "part": 29,
+      "url": "https://kairo.diplo.de/resource/blob/2573898/a82d6a8709a01047d704f86112ec24a5/250210-studium-englisch-data.pdf"
+    },
+    {
+      "id": "anabin",
+      "group": "germany",
+      "name": "anabin: الثانوية العامة وسنة جامعة",
+      "desc": "قاعدة الثانوية العامة + سنة جامعة.",
+      "type": "site",
+      "part": 29,
+      "url": "https://anabin2.kmk.org/filter/news/newsdetails/artikel//aegypten.html"
+    },
+    {
+      "id": "btu-cyber-security",
+      "group": "germany",
+      "name": "BTU كوتبوس: ماجستير Cyber Security",
+      "desc": "الطريق الاحتياطي.",
+      "type": "site",
+      "part": 29,
+      "url": "https://www.b-tu.de/en/cybersecurity-ms/admission"
+    },
+    {
+      "id": "goethe-hours-be",
+      "group": "research",
+      "name": "ساعات جوته الرسمية (صفحة بلجيكا)",
+      "desc": "أرقام جوته للساعات في كل مستوى (جزء 3).",
+      "type": "site",
+      "part": 26,
+      "url": "https://www.goethe.de/ins/be/de/spr/kur/ogf.html"
+    },
+    {
+      "id": "goethe-hours-gb",
+      "group": "research",
+      "name": "ساعات جوته الرسمية (صفحة لندن)",
+      "desc": "أرقام جوته للساعات في كل مستوى (جزء 3).",
+      "type": "site",
+      "part": 26,
+      "url": "https://www.goethe.de/ins/gb/de/sta/lon/kur/faq.html"
+    },
+    {
+      "id": "b1-rules",
+      "group": "research",
+      "name": "لايحة امتحان B1 (Durchführungsbestimmungen)",
+      "desc": "اللوايح الرسمية بتاعة امتحان B1.",
+      "type": "pdf",
+      "part": 26,
+      "url": "https://www.goethe.de/pro/relaunch/prf/de/Durchfuehrungsbestimmungen_B1.pdf"
+    },
+    {
+      "id": "kim-webb-2022",
+      "group": "research",
+      "name": "التكرار المتباعد: Kim وWebb 2022",
+      "desc": "تحليل تجميعي: 48 تجربة على 3,411 متعلم.",
+      "type": "site",
+      "part": 26,
+      "url": "https://www.researchgate.net/publication/358406370_The_Effects_of_Spaced_Practice_on_Second_Language_Learning_A_Meta-Analysis"
+    },
+    {
+      "id": "lyster-saito-2010",
+      "group": "research",
+      "name": "التصحيح: Lyster وSaito 2010",
+      "desc": "15 دراسة على 827 متعلم.",
+      "type": "pdf",
+      "part": 26,
+      "url": "https://discovery.ucl.ac.uk/id/eprint/10066737/1/Saito%20AAM%20LIA-Lyster%20&%20Saito-2010.pdf"
+    },
+    {
+      "id": "review-dazhandbuch",
+      "group": "research",
+      "name": "مراجعة Nicos Weg: DaZ-Handbuch",
+      "desc": "مراجعة للمنهج.",
+      "type": "site",
+      "part": 26,
+      "url": "https://www.dazhandbuch.de/empfehlungen-webseiten/nicos-weg/"
+    },
+    {
+      "id": "review-languagelibrarian",
+      "group": "research",
+      "name": "مراجعة Nicos Weg: Language Librarian",
+      "desc": "مراجعة للمنهج.",
+      "type": "site",
+      "part": 26,
+      "url": "https://languagelibrarian.com/en/german/reviews/dw-learn-german-nicos-weg/"
+    },
+    {
+      "id": "vhs-faq",
+      "group": "research",
+      "name": "vhs-Lernportal: أسئلة وأجوبة",
+      "desc": "أسئلة وأجوبة المتعلمين، ومنها التسجيل.",
+      "type": "site",
+      "part": 26,
+      "url": "https://www.vhs-lernportal.de/wws/faq-lernende.php"
+    },
+    {
+      "id": "oesd-mig",
+      "group": "research",
+      "name": "ÖSD في MIG إسكندرية",
+      "desc": "البديل: امتحان ÖSD B1 في أول يوليو. اسأل MIG في أبريل ومايو.",
+      "type": "site",
+      "part": 26,
+      "url": "https://osd.at/en/certified-exams-for-german-at-mig-new-in-alexandria/"
+    }
+  ]
+}

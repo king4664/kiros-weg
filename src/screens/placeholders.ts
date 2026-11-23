@@ -22,32 +22,6 @@ export const today: Screen = {
   },
 };
 
-export const links: Screen = {
-  id: 'links',
-  title: 'الروابط',
-  render(root) {
-    root.innerHTML = `
-      <section class="card hero">
-        <p class="eyebrow">الروابط</p>
-        <h1 class="title">كل روابط الخطة</h1>
-        <p class="muted">الـ45 رابط في مجموعات، مع بحث ومفضلة. جاية في المرحلة 2.</p>
-      </section>`;
-  },
-};
-
-export const plan: Screen = {
-  id: 'plan',
-  title: 'الخطة',
-  render(root) {
-    root.innerHTML = `
-      <section class="card hero">
-        <p class="eyebrow">الخطة</p>
-        <h1 class="title">المحطات والمنهج</h1>
-        <p class="muted">الخط الزمني، والأسابيع، والقرارات. جاية في المرحلة 2.</p>
-      </section>`;
-  },
-};
-
 export const words: Screen = {
   id: 'words',
   title: 'الكلمات',

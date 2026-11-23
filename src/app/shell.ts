@@ -1,4 +1,6 @@
-import { links, plan, progress, today, words } from '../screens/placeholders';
+import { links } from '../screens/links';
+import { plan } from '../screens/plan';
+import { progress, today, words } from '../screens/placeholders';
 import { settings } from '../screens/settings';
 import type { Screen, ScreenContext } from '../screens/types';
 import { de, el } from './dom';

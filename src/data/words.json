@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "w1-01",
+    "week": 1,
+    "n": 1,
+    "day": 1,
+    "de": "Hallo!",
+    "plural": null,
+    "meaning": "أهلًا / مرحبا"
+  },
+  {
+    "id": "w1-02",
+    "week": 1,
+    "n": 2,
+    "day": 1,
+    "de": "Guten Morgen!",
+    "plural": null,
+    "meaning": "صباح الخير"
+  },
+  {
+    "id": "w1-03",
+    "week": 1,
+    "n": 3,
+    "day": 1,
+    "de": "Guten Tag!",
+    "plural": null,
+    "meaning": "نهارك سعيد (تحية رسمية بالنهار)"
+  },
+  {
+    "id": "w1-04",
+    "week": 1,
+    "n": 4,
+    "day": 1,
+    "de": "Guten Abend!",
+    "plural": null,
+    "meaning": "مساء الخير"
+  },
+  {
+    "id": "w1-05",
+    "week": 1,
+    "n": 5,
+    "day": 1,
+    "de": "Gute Nacht!",
+    "plural": null,
+    "meaning": "تصبح على خير"
+  },
+  {
+    "id": "w1-06",
+    "week": 1,
+    "n": 6,
+    "day": 1,
+    "de": "Tschüss!",
+    "plural": null,
+    "meaning": "باي (مع الأصحاب)"
+  },
+  {
+    "id": "w1-07",
+    "week": 1,
+    "n": 7,
+    "day": 1,
+    "de": "Auf Wiedersehen!",
+    "plural": null,
+    "meaning": "مع السلامة (رسمي)"
+  },
+  {
+    "id": "w1-08",
+    "week": 1,
+    "n": 8,
+    "day": 1,
+    "de": "danke",
+    "plural": null,
+    "meaning": "شكرًا"
+  },
+  {
+    "id": "w1-09",
+    "week": 1,
+    "n": 9,
+    "day": 1,
+    "de": "bitte",
+    "plural": null,
+    "meaning": "لو سمحت / العفو"
+  },
+  {
+    "id": "w1-10",
+    "week": 1,
+    "n": 10,
+    "day": 1,
+    "de": "Entschuldigung!",
+    "plural": null,
+    "meaning": "لو سمحت (لما تنادي حد) / آسف"
+  },
+  {
+    "id": "w1-11",
+    "week": 1,
+    "n": 11,
+    "day": 2,
+    "de": "Wie geht's?",
+    "plural": null,
+    "meaning": "عامل إيه؟"
+  },
+  {
+    "id": "w1-12",
+    "week": 1,
+    "n": 12,
+    "day": 2,
+    "de": "gut",
+    "plural": null,
+    "meaning": "كويس"
+  },
+  {
+    "id": "w1-13",
+    "week": 1,
+    "n": 13,
+    "day": 2,
+    "de": "Und dir?",
+    "plural": null,
+    "meaning": "وإنت؟"
+  },
+  {
+    "id": "w1-14",
+    "week": 1,
+    "n": 14,
+    "day": 2,
+    "de": "nicht so gut",
+    "plural": null,
+    "meaning": "مش كويس قوي"
+  },
+  {
+    "id": "w1-15",
+    "week": 1,
+    "n": 15,
+    "day": 2,
+    "de": "der Name",
+    "plural": null,
+    "meaning": "الاسم"
+  },
+  {
+    "id": "w1-16",
+    "week": 1,
+    "n": 16,
+    "day": 2,
+    "de": "der Vorname",
+    "plural": null,
+    "meaning": "الاسم الأول"
+  },
+  {
+    "id": "w1-17",
+    "week": 1,
+    "n": 17,
+    "day": 2,
+    "de": "der Nachname",
+    "plural": null,
+    "meaning": "اسم العيلة"
+  },
+  {
+    "id": "w1-18",
+    "week": 1,
+    "n": 18,
+    "day": 2,
+    "de": "das Land",
+    "plural": null,
+    "meaning": "البلد (الدولة)"
+  },
+  {
+    "id": "w1-19",
+    "week": 1,
+    "n": 19,
+    "day": 2,
+    "de": "die Stadt",
+    "plural": null,
+    "meaning": "المدينة"
+  },
+  {
+    "id": "w1-20",
+    "week": 1,
+    "n": 20,
+    "day": 2,
+    "de": "die Adresse",
+    "plural": null,
+    "meaning": "العنوان"
+  },
+  {
+    "id": "w1-21",
+    "week": 1,
+    "n": 21,
+    "day": 3,
+    "de": "die Straße",
+    "plural": null,
+    "meaning": "الشارع"
+  },
+  {
+    "id": "w1-22",
+    "week": 1,
+    "n": 22,
+    "day": 3,
+    "de": "die Telefonnummer",
+    "plural": null,
+    "meaning": "رقم التليفون"
+  },
+  {
+    "id": "w1-23",
+    "week": 1,
+    "n": 23,
+    "day": 3,
+    "de": "die Sprache",
+    "plural": null,
+    "meaning": "اللغة"
+  },
+  {
+    "id": "w1-24",
+    "week": 1,
+    "n": 24,
+    "day": 3,
+    "de": "das Alter",
+    "plural": null,
+    "meaning": "السن"
+  },
+  {
+    "id": "w1-25",
+    "week": 1,
+    "n": 25,
+    "day": 3,
+    "de": "sein",
+    "plural": null,
+    "meaning": "يكون (أنا أكون = ich bin)"
+  },
+  {
+    "id": "w1-26",
+    "week": 1,
+    "n": 26,
+    "day": 3,
+    "de": "heißen",
+    "plural": null,
+    "meaning": "اسمه (ich heiße = اسمي)"
+  },
+  {
+    "id": "w1-27",
+    "week": 1,
+    "n": 27,
+    "day": 3,
+    "de": "kommen",
+    "plural": null,
+    "meaning": "ييجي (kommen aus = يكون من بلد)"
+  },
+  {
+    "id": "w1-28",
+    "week": 1,
+    "n": 28,
+    "day": 3,
+    "de": "wohnen",
+    "plural": null,
+    "meaning": "يسكن"
+  },
+  {
+    "id": "w1-29",
+    "week": 1,
+    "n": 29,
+    "day": 3,
+    "de": "sprechen",
+    "plural": null,
+    "meaning": "يتكلم (du sprichst / er spricht)"
+  },
+  {
+    "id": "w1-30",
+    "week": 1,
+    "n": 30,
+    "day": 3,
+    "de": "lernen",
+    "plural": null,
+    "meaning": "يتعلم / يذاكر"
+  },
+  {
+    "id": "w1-31",
+    "week": 1,
+    "n": 31,
+    "day": 4,
+    "de": "studieren",
+    "plural": null,
+    "meaning": "يدرس في الجامعة"
+  },
+  {
+    "id": "w1-32",
+    "week": 1,
+    "n": 32,
+    "day": 4,
+    "de": "arbeiten",
+    "plural": null,
+    "meaning": "يشتغل"
+  },
+  {
+    "id": "w1-33",
+    "week": 1,
+    "n": 33,
+    "day": 4,
+    "de": "buchstabieren",
+    "plural": null,
+    "meaning": "يتهجّى (يقول الكلمة حرف حرف)"
+  },
+  {
+    "id": "w1-34",
+    "week": 1,
+    "n": 34,
+    "day": 4,
+    "de": "verstehen",
+    "plural": null,
+    "meaning": "يفهم"
+  },
+  {
+    "id": "w1-35",
+    "week": 1,
+    "n": 35,
+    "day": 4,
+    "de": "wer?",
+    "plural": null,
+    "meaning": "مين؟"
+  },
+  {
+    "id": "w1-36",
+    "week": 1,
+    "n": 36,
+    "day": 4,
+    "de": "wie?",
+    "plural": null,
+    "meaning": "إزاي؟ / إيه؟ (في: اسمك إيه)"
+  },
+  {
+    "id": "w1-37",
+    "week": 1,
+    "n": 37,
+    "day": 4,
+    "de": "was?",
+    "plural": null,
+    "meaning": "إيه؟"
+  },
+  {
+    "id": "w1-38",
+    "week": 1,
+    "n": 38,
+    "day": 4,
+    "de": "wo?",
+    "plural": null,
+    "meaning": "فين؟"
+  },
+  {
+    "id": "w1-39",
+    "week": 1,
+    "n": 39,
+    "day": 4,
+    "de": "woher?",
+    "plural": null,
+    "meaning": "منين؟"
+  },
+  {
+    "id": "w1-40",
+    "week": 1,
+    "n": 40,
+    "day": 4,
+    "de": "wie alt?",
+    "plural": null,
+    "meaning": "عنده كام سنة؟"
+  },
+  {
+    "id": "w1-41",
+    "week": 1,
+    "n": 41,
+    "day": 5,
+    "de": "Ägypten",
+    "plural": null,
+    "meaning": "مصر"
+  },
+  {
+    "id": "w1-42",
+    "week": 1,
+    "n": 42,
+    "day": 5,
+    "de": "Deutschland",
+    "plural": null,
+    "meaning": "ألمانيا"
+  },
+  {
+    "id": "w1-43",
+    "week": 1,
+    "n": 43,
+    "day": 5,
+    "de": "Österreich",
+    "plural": null,
+    "meaning": "النمسا"
+  },
+  {
+    "id": "w1-44",
+    "week": 1,
+    "n": 44,
+    "day": 5,
+    "de": "die Schweiz",
+    "plural": null,
+    "meaning": "سويسرا (دايمًا بـ die)"
+  },
+  {
+    "id": "w1-45",
+    "week": 1,
+    "n": 45,
+    "day": 5,
+    "de": "Arabisch",
+    "plural": null,
+    "meaning": "العربي (اللغة)"
+  },
+  {
+    "id": "w1-46",
+    "week": 1,
+    "n": 46,
+    "day": 5,
+    "de": "Deutsch",
+    "plural": null,
+    "meaning": "الألماني (اللغة)"
+  },
+  {
+    "id": "w1-47",
+    "week": 1,
+    "n": 47,
+    "day": 5,
+    "de": "Englisch",
+    "plural": null,
+    "meaning": "الإنجليزي (اللغة)"
+  },
+  {
+    "id": "w1-48",
+    "week": 1,
+    "n": 48,
+    "day": 5,
+    "de": "Spanisch",
+    "plural": null,
+    "meaning": "الإسباني (اللغة)"
+  },
+  {
+    "id": "w1-49",
+    "week": 1,
+    "n": 49,
+    "day": 5,
+    "de": "Wie bitte?",
+    "plural": null,
+    "meaning": "نعم؟ (لما ماتسمعش كويس)"
+  },
+  {
+    "id": "w1-50",
+    "week": 1,
+    "n": 50,
+    "day": 5,
+    "de": "noch einmal",
+    "plural": null,
+    "meaning": "مرة تانية"
+  },
+  {
+    "id": "w1-51",
+    "week": 1,
+    "n": 51,
+    "day": 6,
+    "de": "langsam",
+    "plural": null,
+    "meaning": "براحة / ببطء"
+  },
+  {
+    "id": "w1-52",
+    "week": 1,
+    "n": 52,
+    "day": 6,
+    "de": "Kein Problem!",
+    "plural": null,
+    "meaning": "مفيش مشكلة!"
+  },
+  {
+    "id": "w1-53",
+    "week": 1,
+    "n": 53,
+    "day": 6,
+    "de": "ja",
+    "plural": null,
+    "meaning": "أيوه"
+  },
+  {
+    "id": "w1-54",
+    "week": 1,
+    "n": 54,
+    "day": 6,
+    "de": "nein",
+    "plural": null,
+    "meaning": "لأ"
+  },
+  {
+    "id": "w1-55",
+    "week": 1,
+    "n": 55,
+    "day": 6,
+    "de": "der Herr",
+    "plural": null,
+    "meaning": "الأستاذ / السيد"
+  },
+  {
+    "id": "w1-56",
+    "week": 1,
+    "n": 56,
+    "day": 6,
+    "de": "die Frau",
+    "plural": null,
+    "meaning": "الست / المدام (وكمان: الزوجة)"
+  },
+  {
+    "id": "w1-57",
+    "week": 1,
+    "n": 57,
+    "day": 6,
+    "de": "der Freund",
+    "plural": null,
+    "meaning": "الصاحب"
+  },
+  {
+    "id": "w1-58",
+    "week": 1,
+    "n": 58,
+    "day": 6,
+    "de": "die Freundin",
+    "plural": null,
+    "meaning": "الصاحبة"
+  },
+  {
+    "id": "w1-59",
+    "week": 1,
+    "n": 59,
+    "day": 6,
+    "de": "der Student",
+    "plural": null,
+    "meaning": "الطالب (في الجامعة)"
+  },
+  {
+    "id": "w1-60",
+    "week": 1,
+    "n": 60,
+    "day": 6,
+    "de": "die Studentin",
+    "plural": null,
+    "meaning": "الطالبة (في الجامعة)"
+  },
+  {
+    "id": "w2-01",
+    "week": 2,
+    "n": 1,
+    "day": 1,
+    "topic": "الأرقام",
+    "de": "null",
+    "plural": null,
+    "meaning": "صفر"
+  },
+  {
+    "id": "w2-02",
+    "week": 2,
+    "n": 2,
+    "day": 1,
+    "topic": "الأرقام",
+    "de": "eins",
+    "plural": null,
+    "meaning": "واحد"
+  },
+  {
+    "id": "w2-03",
+    "week": 2,
+    "n": 3,
+    "day": 1,
+    "topic": "الأرقام",
+    "de": "zwei",
+    "plural": null,
+    "meaning": "اتنين"
+  },
+  {
+    "id": "w2-04",
+    "week": 2,
+    "n": 4,
+    "day": 1,
+    "topic": "الأرقام",
+    "de": "drei",
+    "plural": null,
+    "meaning": "تلاتة"
+  },
+  {
+    "id": "w2-05",
+    "week": 2,
+    "n": 5,
+    "day": 1,
+    "topic": "الأرقام",
+    "de": "vier",
+    "plural": null,
+    "meaning": "أربعة"
+  },
+  {
+    "id": "w2-06",
+    "week": 2,
+    "n": 6,
+    "day": 1,
+    "topic": "الأرقام",
+    "de": "fünf",
+    "plural": null,
+    "meaning": "خمسة"
+  },
+  {
+    "id": "w2-07",
+    "week": 2,
+    "n": 7,
+    "day": 1,
+    "topic": "الأرقام",
+    "de": "sechs",
+    "plural": null,
+    "meaning": "ستة"
+  },
+  {
+    "id": "w2-08",
+    "week": 2,
+    "n": 8,
+    "day": 1,
+    "topic": "الأرقام",
+    "de": "sieben",
+    "plural": null,
+    "meaning": "سبعة"
+  },
+  {
+    "id": "w2-09",
+    "week": 2,
+    "n": 9,
+    "day": 1,
+    "topic": "الأرقام",
+    "de": "acht",
+    "plural": null,
+    "meaning": "تمانية"
+  },
+  {
+    "id": "w2-10",
+    "week": 2,
+    "n": 10,
+    "day": 1,
+    "topic": "الأرقام",
+    "de": "neun",
+    "plural": null,
+    "meaning": "تسعة"
+  },
+  {
+    "id": "w2-11",
+    "week": 2,
+    "n": 11,
+    "day": 1,
+    "topic": "الأرقام",
+    "de": "zehn",
+    "plural": null,
+    "meaning": "عشرة"
+  },
+  {
+    "id": "w2-12",
+    "week": 2,
+    "n": 12,
+    "day": 1,
+    "topic": "الأرقام",
+    "de": "elf",
+    "plural": null,
+    "meaning": "حداشر"
+  },
+  {
+    "id": "w2-13",
+    "week": 2,
+    "n": 13,
+    "day": 2,
+    "topic": "أرقام أكبر والساعة",
+    "de": "zwölf",
+    "plural": null,
+    "meaning": "اتناشر"
+  },
+  {
+    "id": "w2-14",
+    "week": 2,
+    "n": 14,
+    "day": 2,
+    "topic": "أرقام أكبر والساعة",
+    "de": "zwanzig",
+    "plural": null,
+    "meaning": "عشرين"
+  },
+  {
+    "id": "w2-15",
+    "week": 2,
+    "n": 15,
+    "day": 2,
+    "topic": "أرقام أكبر والساعة",
+    "de": "dreißig",
+    "plural": null,
+    "meaning": "تلاتين"
+  },
+  {
+    "id": "w2-16",
+    "week": 2,
+    "n": 16,
+    "day": 2,
+    "topic": "أرقام أكبر والساعة",
+    "de": "hundert",
+    "plural": null,
+    "meaning": "مية"
+  },
+  {
+    "id": "w2-17",
+    "week": 2,
+    "n": 17,
+    "day": 2,
+    "topic": "أرقام أكبر والساعة",
+    "de": "die Zahl",
+    "plural": "die Zahlen",
+    "meaning": "الرقم (العدد)"
+  },
+  {
+    "id": "w2-18",
+    "week": 2,
+    "n": 18,
+    "day": 2,
+    "topic": "أرقام أكبر والساعة",
+    "de": "die Uhr",
+    "plural": "die Uhren",
+    "meaning": "الساعة (اللي بتلبسها أو على الحيطة) — وzehn Uhr = الساعة 10"
+  },
+  {
+    "id": "w2-19",
+    "week": 2,
+    "n": 19,
+    "day": 2,
+    "topic": "أرقام أكبر والساعة",
+    "de": "Wie spät ist es?",
+    "plural": null,
+    "meaning": "الساعة كام؟"
+  },
+  {
+    "id": "w2-20",
+    "week": 2,
+    "n": 20,
+    "day": 2,
+    "topic": "أرقام أكبر والساعة",
+    "de": "die Stunde",
+    "plural": "die Stunden",
+    "meaning": "الساعة (60 دقيقة)"
+  },
+  {
+    "id": "w2-21",
+    "week": 2,
+    "n": 21,
+    "day": 2,
+    "topic": "أرقام أكبر والساعة",
+    "de": "die Minute",
+    "plural": "die Minuten",
+    "meaning": "الدقيقة"
+  },
+  {
+    "id": "w2-22",
+    "week": 2,
+    "n": 22,
+    "day": 2,
+    "topic": "أرقام أكبر والساعة",
+    "de": "halb",
+    "plural": null,
+    "meaning": "نص — وخد بالك: halb drei = اتنين ونص"
+  },
+  {
+    "id": "w2-23",
+    "week": 2,
+    "n": 23,
+    "day": 2,
+    "topic": "أرقام أكبر والساعة",
+    "de": "Viertel",
+    "plural": null,
+    "meaning": "ربع — Viertel nach = وربع، Viertel vor = إلا ربع"
+  },
+  {
+    "id": "w2-24",
+    "week": 2,
+    "n": 24,
+    "day": 2,
+    "topic": "أرقام أكبر والساعة",
+    "de": "um",
+    "plural": null,
+    "meaning": "الساعة (قبل الميعاد: um 8 Uhr)"
+  },
+  {
+    "id": "w2-25",
+    "week": 2,
+    "n": 25,
+    "day": 3,
+    "topic": "الأيام والوقت",
+    "de": "der Tag",
+    "plural": "die Tage",
+    "meaning": "اليوم"
+  },
+  {
+    "id": "w2-26",
+    "week": 2,
+    "n": 26,
+    "day": 3,
+    "topic": "الأيام والوقت",
+    "de": "die Woche",
+    "plural": "die Wochen",
+    "meaning": "الأسبوع"
+  },
+  {
+    "id": "w2-27",
+    "week": 2,
+    "n": 27,
+    "day": 3,
+    "topic": "الأيام والوقت",
+    "de": "das Wochenende",
+    "plural": "die Wochenenden",
+    "meaning": "الويك إند (آخر الأسبوع)"
+  },
+  {
+    "id": "w2-28",
+    "week": 2,
+    "n": 28,
+    "day": 3,
+    "topic": "الأيام والوقت",
+    "de": "der Montag",
+    "plural": null,
+    "meaning": "الاتنين"
+  },
+  {
+    "id": "w2-29",
+    "week": 2,
+    "n": 29,
+    "day": 3,
+    "topic": "الأيام والوقت",
+    "de": "der Dienstag",
+    "plural": null,
+    "meaning": "التلات"
+  },
+  {
+    "id": "w2-30",
+    "week": 2,
+    "n": 30,
+    "day": 3,
+    "topic": "الأيام والوقت",
+    "de": "der Mittwoch",
+    "plural": null,
+    "meaning": "الأربع"
+  },
+  {
+    "id": "w2-31",
+    "week": 2,
+    "n": 31,
+    "day": 3,
+    "topic": "الأيام والوقت",
+    "de": "der Donnerstag",
+    "plural": null,
+    "meaning": "الخميس"
+  },
+  {
+    "id": "w2-32",
+    "week": 2,
+    "n": 32,
+    "day": 3,
+    "topic": "الأيام والوقت",
+    "de": "der Freitag",
+    "plural": null,
+    "meaning": "الجمعة"
+  },
+  {
+    "id": "w2-33",
+    "week": 2,
+    "n": 33,
+    "day": 3,
+    "topic": "الأيام والوقت",
+    "de": "der Samstag",
+    "plural": null,
+    "meaning": "السبت"
+  },
+  {
+    "id": "w2-34",
+    "week": 2,
+    "n": 34,
+    "day": 3,
+    "topic": "الأيام والوقت",
+    "de": "der Sonntag",
+    "plural": null,
+    "meaning": "الحد"
+  },
+  {
+    "id": "w2-35",
+    "week": 2,
+    "n": 35,
+    "day": 3,
+    "topic": "الأيام والوقت",
+    "de": "heute",
+    "plural": null,
+    "meaning": "النهارده"
+  },
+  {
+    "id": "w2-36",
+    "week": 2,
+    "n": 36,
+    "day": 3,
+    "topic": "الأيام والوقت",
+    "de": "morgen",
+    "plural": null,
+    "meaning": "بكرة — وder Morgen = الصبح"
+  },
+  {
+    "id": "w2-37",
+    "week": 2,
+    "n": 37,
+    "day": 4,
+    "topic": "العيلة",
+    "de": "die Familie",
+    "plural": "die Familien",
+    "meaning": "العيلة"
+  },
+  {
+    "id": "w2-38",
+    "week": 2,
+    "n": 38,
+    "day": 4,
+    "topic": "العيلة",
+    "de": "die Eltern",
+    "plural": null,
+    "meaning": "الأهل (الأب والأم) — دايمًا جمع"
+  },
+  {
+    "id": "w2-39",
+    "week": 2,
+    "n": 39,
+    "day": 4,
+    "topic": "العيلة",
+    "de": "der Vater",
+    "plural": "die Väter",
+    "meaning": "الأب"
+  },
+  {
+    "id": "w2-40",
+    "week": 2,
+    "n": 40,
+    "day": 4,
+    "topic": "العيلة",
+    "de": "die Mutter",
+    "plural": "die Mütter",
+    "meaning": "الأم"
+  },
+  {
+    "id": "w2-41",
+    "week": 2,
+    "n": 41,
+    "day": 4,
+    "topic": "العيلة",
+    "de": "der Bruder",
+    "plural": "die Brüder",
+    "meaning": "الأخ"
+  },
+  {
+    "id": "w2-42",
+    "week": 2,
+    "n": 42,
+    "day": 4,
+    "topic": "العيلة",
+    "de": "die Schwester",
+    "plural": "die Schwestern",
+    "meaning": "الأخت"
+  },
+  {
+    "id": "w2-43",
+    "week": 2,
+    "n": 43,
+    "day": 4,
+    "topic": "العيلة",
+    "de": "die Geschwister",
+    "plural": null,
+    "meaning": "الإخوات (ولاد وبنات) — دايمًا جمع"
+  },
+  {
+    "id": "w2-44",
+    "week": 2,
+    "n": 44,
+    "day": 4,
+    "topic": "العيلة",
+    "de": "der Sohn",
+    "plural": "die Söhne",
+    "meaning": "الابن"
+  },
+  {
+    "id": "w2-45",
+    "week": 2,
+    "n": 45,
+    "day": 4,
+    "topic": "العيلة",
+    "de": "die Tochter",
+    "plural": "die Töchter",
+    "meaning": "البنت (الابنة)"
+  },
+  {
+    "id": "w2-46",
+    "week": 2,
+    "n": 46,
+    "day": 4,
+    "topic": "العيلة",
+    "de": "das Kind",
+    "plural": "die Kinder",
+    "meaning": "الطفل / العيّل"
+  },
+  {
+    "id": "w2-47",
+    "week": 2,
+    "n": 47,
+    "day": 4,
+    "topic": "العيلة",
+    "de": "der Mann",
+    "plural": "die Männer",
+    "meaning": "الراجل / الجوز"
+  },
+  {
+    "id": "w2-48",
+    "week": 2,
+    "n": 48,
+    "day": 4,
+    "topic": "العيلة",
+    "de": "verheiratet",
+    "plural": null,
+    "meaning": "متجوّز"
+  },
+  {
+    "id": "w2-49",
+    "week": 2,
+    "n": 49,
+    "day": 5,
+    "topic": "حاجات حواليك",
+    "de": "der Tisch",
+    "plural": "die Tische",
+    "meaning": "الترابيزة"
+  },
+  {
+    "id": "w2-50",
+    "week": 2,
+    "n": 50,
+    "day": 5,
+    "topic": "حاجات حواليك",
+    "de": "der Stuhl",
+    "plural": "die Stühle",
+    "meaning": "الكرسي"
+  },
+  {
+    "id": "w2-51",
+    "week": 2,
+    "n": 51,
+    "day": 5,
+    "topic": "حاجات حواليك",
+    "de": "das Bett",
+    "plural": "die Betten",
+    "meaning": "السرير"
+  },
+  {
+    "id": "w2-52",
+    "week": 2,
+    "n": 52,
+    "day": 5,
+    "topic": "حاجات حواليك",
+    "de": "die Lampe",
+    "plural": "die Lampen",
+    "meaning": "اللمبة / الأباجورة"
+  },
+  {
+    "id": "w2-53",
+    "week": 2,
+    "n": 53,
+    "day": 5,
+    "topic": "حاجات حواليك",
+    "de": "das Handy",
+    "plural": "die Handys",
+    "meaning": "الموبايل"
+  },
+  {
+    "id": "w2-54",
+    "week": 2,
+    "n": 54,
+    "day": 5,
+    "topic": "حاجات حواليك",
+    "de": "der Computer",
+    "plural": "die Computer",
+    "meaning": "الكمبيوتر"
+  },
+  {
+    "id": "w2-55",
+    "week": 2,
+    "n": 55,
+    "day": 5,
+    "topic": "حاجات حواليك",
+    "de": "das Buch",
+    "plural": "die Bücher",
+    "meaning": "الكتاب"
+  },
+  {
+    "id": "w2-56",
+    "week": 2,
+    "n": 56,
+    "day": 5,
+    "topic": "حاجات حواليك",
+    "de": "der Kugelschreiber",
+    "plural": "die Kugelschreiber",
+    "meaning": "القلم الجاف"
+  },
+  {
+    "id": "w2-57",
+    "week": 2,
+    "n": 57,
+    "day": 5,
+    "topic": "حاجات حواليك",
+    "de": "die Tasche",
+    "plural": "die Taschen",
+    "meaning": "الشنطة"
+  },
+  {
+    "id": "w2-58",
+    "week": 2,
+    "n": 58,
+    "day": 5,
+    "topic": "حاجات حواليك",
+    "de": "der Schlüssel",
+    "plural": "die Schlüssel",
+    "meaning": "المفتاح"
+  },
+  {
+    "id": "w2-59",
+    "week": 2,
+    "n": 59,
+    "day": 5,
+    "topic": "حاجات حواليك",
+    "de": "das Auto",
+    "plural": "die Autos",
+    "meaning": "العربية"
+  },
+  {
+    "id": "w2-60",
+    "week": 2,
+    "n": 60,
+    "day": 5,
+    "topic": "حاجات حواليك",
+    "de": "das Fahrrad",
+    "plural": "die Fahrräder",
+    "meaning": "العجلة"
+  },
+  {
+    "id": "w2-61",
+    "week": 2,
+    "n": 61,
+    "day": 6,
+    "topic": "أفعال وكلمات صغيرة",
+    "de": "haben",
+    "plural": null,
+    "meaning": "يكون عنده (ich habe, du hast, er hat)"
+  },
+  {
+    "id": "w2-62",
+    "week": 2,
+    "n": 62,
+    "day": 6,
+    "topic": "أفعال وكلمات صغيرة",
+    "de": "machen",
+    "plural": null,
+    "meaning": "يعمل"
+  },
+  {
+    "id": "w2-63",
+    "week": 2,
+    "n": 63,
+    "day": 6,
+    "topic": "أفعال وكلمات صغيرة",
+    "de": "gehen",
+    "plural": null,
+    "meaning": "يروح / يمشي"
+  },
+  {
+    "id": "w2-64",
+    "week": 2,
+    "n": 64,
+    "day": 6,
+    "topic": "أفعال وكلمات صغيرة",
+    "de": "kaufen",
+    "plural": null,
+    "meaning": "يشتري"
+  },
+  {
+    "id": "w2-65",
+    "week": 2,
+    "n": 65,
+    "day": 6,
+    "topic": "أفعال وكلمات صغيرة",
+    "de": "brauchen",
+    "plural": null,
+    "meaning": "يحتاج"
+  },
+  {
+    "id": "w2-66",
+    "week": 2,
+    "n": 66,
+    "day": 6,
+    "topic": "أفعال وكلمات صغيرة",
+    "de": "kosten",
+    "plural": null,
+    "meaning": "سعره (يتكلّف)"
+  },
+  {
+    "id": "w2-67",
+    "week": 2,
+    "n": 67,
+    "day": 6,
+    "topic": "أفعال وكلمات صغيرة",
+    "de": "nicht",
+    "plural": null,
+    "meaning": "مش (مع الفعل والصفة)"
+  },
+  {
+    "id": "w2-68",
+    "week": 2,
+    "n": 68,
+    "day": 6,
+    "topic": "أفعال وكلمات صغيرة",
+    "de": "kein / keine",
+    "plural": null,
+    "meaning": "مش / مفيش (قبل الاسم)"
+  },
+  {
+    "id": "w2-69",
+    "week": 2,
+    "n": 69,
+    "day": 6,
+    "topic": "أفعال وكلمات صغيرة",
+    "de": "die Zeit",
+    "plural": "die Zeiten",
+    "meaning": "الوقت"
+  },
+  {
+    "id": "w2-70",
+    "week": 2,
+    "n": 70,
+    "day": 6,
+    "topic": "أفعال وكلمات صغيرة",
+    "de": "auch",
+    "plural": null,
+    "meaning": "كمان"
+  },
+  {
+    "id": "w2-71",
+    "week": 2,
+    "n": 71,
+    "day": 6,
+    "topic": "أفعال وكلمات صغيرة",
+    "de": "gern",
+    "plural": null,
+    "meaning": "بحب (أعمل حاجة): Ich lerne gern = بحب أذاكر"
+  },
+  {
+    "id": "w2-72",
+    "week": 2,
+    "n": 72,
+    "day": 6,
+    "topic": "أفعال وكلمات صغيرة",
+    "de": "aber",
+    "plural": null,
+    "meaning": "بس / لكن"
+  }
+]
