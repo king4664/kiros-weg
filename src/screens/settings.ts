@@ -1,3 +1,4 @@
+import { exportNow, importFile, lastExportText } from '../app/backupui';
 import { getLadder, getSentences, setLadder, setSentences, setSplashDate } from '../app/daystore';
 import { esc, rich } from '../app/dom';
 import { icons } from '../app/icons';
@@ -6,7 +7,7 @@ import { parseLines, saveSentences, sentenceFor } from '../lib/daily';
 import { formatClock, toISO } from '../lib/dates';
 import { parseOverrides, type Scene } from '../lib/params';
 import { PHASE_NAMES } from '../lib/timeOfDay';
-import { RUNG_NAMES, type LadderSetting } from '../lib/today';
+import { RUNG_NAMES, type Rung } from '../lib/today';
 import type { Screen } from './types';
 
 const SCENE_NAMES: Record<Scene, string> = {
@@ -25,7 +26,6 @@ function countSentences(n: number): string {
 const LADDER_RULE = '**السلّم:** تطلع درجة بس لما تكمّل 6 أيام في الأسبوع. ولو فاتك يومين، تنزل درجة.';
 
 const LADDER_OPTIONS: [string, string, string][] = [
-  ['auto', 'زي مواعيد الخطة', 'ساعة لحد 28 نوفمبر، وساعة ونص لحد 5 ديسمبر، وأنواع الأيام من 6 ديسمبر'],
   ['0', RUNG_NAMES[0], ''],
   ['1', RUNG_NAMES[1], ''],
   ['2', RUNG_NAMES[2], ''],
@@ -92,7 +92,7 @@ export const settings: Screen = {
             </label>`,
           ).join('')}
         </div>
-        <p class="note">الدرجة مابتعديش مواعيد الخطة: ساعة لحد 28 نوفمبر، وساعة ونص لحد 5 ديسمبر.</p>
+        <p class="note">لما تكمّل 6 أيام أو يفوتك يومين، «المتابعة» بتسألك تطلع ولا تنزل. ومن هنا تغيّرها بإيدك. والدرجة مابتعديش مواعيد الخطة: ساعة لحد 28 نوفمبر، وساعة ونص لحد 5 ديسمبر.</p>
       </section>
 
       <section class="card">
@@ -108,7 +108,13 @@ export const settings: Screen = {
 
       <section class="card">
         <h2 class="card-title">النسخ الاحتياطي</h2>
-        <p class="muted">Export وImport لبياناتك في المرحلة 4.</p>
+        <p class="small muted">كل بياناتك (المتابعة، والجمل، والإعدادات) في ملف JSON واحد. اعمل نسخة كل أسبوع، علشان البيانات على الموبايل ده بس.</p>
+        <p class="small" data-last-export>${lastExportText()}</p>
+        <div class="task-actions">
+          <button type="button" class="btn" data-export>${icons.download}<span>Export: اعمل نسخة</span></button>
+          <label class="ghost-btn file-btn">${icons.upload}<span>Import: رجّع نسخة</span><input type="file" accept="application/json,.json" data-import /></label>
+        </div>
+        <p class="small" data-import-status aria-live="polite"></p>
       </section>`;
 
     root.querySelectorAll<HTMLInputElement>('input[name="scene"]').forEach((input) =>
@@ -116,9 +122,24 @@ export const settings: Screen = {
         if (input.checked) updateSettings({ scene: input.value as Scene });
       }),
     );
+    root.querySelector('[data-export]')?.addEventListener('click', () => {
+      exportNow();
+      const last = root.querySelector('[data-last-export]');
+      if (last) last.textContent = lastExportText();
+    });
+    const importInput = root.querySelector<HTMLInputElement>('[data-import]');
+    importInput?.addEventListener('change', async () => {
+      const file = importInput.files?.[0];
+      if (!file) return;
+      const msg = await importFile(file);
+      const status = root.querySelector('[data-import-status]');
+      if (status && msg) status.textContent = msg;
+      importInput.value = '';
+    });
+
     root.querySelectorAll<HTMLInputElement>('input[name="ladder"]').forEach((input) =>
       input.addEventListener('change', () => {
-        if (input.checked) setLadder((input.value === 'auto' ? 'auto' : Number(input.value)) as LadderSetting);
+        if (input.checked) setLadder(Number(input.value) as Rung);
       }),
     );
 

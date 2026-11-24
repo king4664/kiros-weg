@@ -1,5 +1,6 @@
 import daysJson from './days.json';
 import decisionsJson from './decisions.json';
+import hoursJson from './hours.json';
 import linksJson from './links.json';
 import milestonesJson from './milestones.json';
 import nicosJson from './nicos.json';
@@ -8,6 +9,7 @@ import weeksJson from './weeks.json';
 import wordsJson from './words.json';
 import type {
   Decisions,
+  Hours,
   Link,
   LinkGroup,
   Milestone,
@@ -31,5 +33,6 @@ export const TEMPLATES = templatesJson as Record<TemplateId, Template>;
 export const PLAN_DAYS = daysJson.days as PlanDay[];
 export const SPECIAL_DAYS = daysJson.specials as SpecialDay[];
 export const NICOS = nicosJson as NicosLessons;
+export const HOURS = hoursJson as Hours;
 
 export * from './types';

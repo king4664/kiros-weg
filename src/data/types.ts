@@ -220,3 +220,25 @@ export interface NicosLessons {
   note: string;
   A1: string[];
 }
+
+/* الساعات (جزء 3) */
+
+export interface HoursPeriod {
+  /** الأعمدة زي ما هي في جدول «الحساب» */
+  label: string;
+  weeks: string;
+  perWeek: string;
+  total: string;
+  start: ISODate;
+  end: ISODate;
+  min: number;
+  max: number;
+}
+
+export interface Hours {
+  periods: HoursPeriod[];
+  total: { min: number; max: number };
+  realistic: { min: number; max: number };
+  /** الشجرة: الساعات اللي كل مرحلة بتبدأ عندها */
+  tree: number[];
+}

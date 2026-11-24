@@ -1,5 +1,6 @@
 import type { FollowupValues, Lesson, RunningTimer, SentencesState } from '../lib/daily';
-import type { DayType, LadderSetting } from '../lib/today';
+import { toISO } from '../lib/dates';
+import { effectiveRung, type DayType, type LadderSetting, type Rung } from '../lib/today';
 import { isObject, isStringArray, readJSON, writeJSON } from './storage';
 
 /** كل بيانات المتابعة على الموبايل بس، تحت kirosweg.* (Export وImport في المرحلة 4). */
@@ -11,6 +12,9 @@ export const KEYS = {
   sentences: 'kirosweg.sentences.v1',
   splash: 'kirosweg.splash.v1',
   timer: 'kirosweg.timer.v1',
+  reviews: 'kirosweg.reviews.v1',
+  mistakes: 'kirosweg.mistakes.v1',
+  backup: 'kirosweg.backup.v1',
 } as const;
 
 /** بيتبعت لما أي حاجة من دول تتغير، علشان الشاشات تتحدّث */
@@ -26,13 +30,21 @@ export interface DayRecord {
   done?: string[];
   /** دقايق التايمر لكل مهمة */
   minutes?: Record<string, number>;
-  /** خانات رسالة المتابعة */
-  log?: Partial<FollowupValues>;
+  /** خانات رسالة المتابعة، ودقايق الاستماع (جدول جزء 14) */
+  log?: Partial<FollowupValues & { listening: string }>;
+  /** الدقايق اللي خلصت (من المهام والتايمر)، بتتحفظ لما شاشة النهارده تتفتح */
+  total?: number;
+  /** وقت اليوم في الخطة (اليوم العادي) */
+  planned?: number;
 }
 
 type Days = Record<string, DayRecord>;
 
 const validDays = (v: unknown): v is Days => isObject(v) && Object.values(v).every(isObject);
+
+export function getAllDays(): Days {
+  return readJSON<Days>(KEYS.days, {}, validDays);
+}
 
 export function getDay(iso: string): DayRecord {
   return readJSON<Days>(KEYS.days, {}, validDays)[iso] ?? {};
@@ -62,17 +74,40 @@ export function setLastLesson(last: Lesson | null): void {
   notify();
 }
 
-/* السلّم */
+/* السلّم: بيطلع بس لما كيرو يأكد (المرحلة 4) */
 
-const validLadder = (v: unknown): v is { setting: LadderSetting } =>
-  isObject(v) && (v.setting === 'auto' || [0, 1, 2, 3].includes(v.setting as number));
-
-export function getLadder(): LadderSetting {
-  return readJSON(KEYS.ladder, { setting: 'auto' as LadderSetting }, validLadder).setting;
+interface LadderState {
+  setting: LadderSetting;
+  /** الاقتراحات اللي اترد عليها: «2026-11-23:up» */
+  answered?: Record<string, boolean>;
 }
 
-export function setLadder(setting: LadderSetting): void {
-  writeJSON(KEYS.ladder, { setting });
+const validLadder = (v: unknown): v is LadderState =>
+  isObject(v) && (v.setting === 'auto' || [0, 1, 2, 3].includes(v.setting as number));
+
+function ladderState(): LadderState {
+  return readJSON<LadderState>(KEYS.ladder, { setting: 0 }, validLadder);
+}
+
+/** الدرجة الحالية. «زي مواعيد الخطة» القديمة بتبقى درجة النهارده. */
+export function getLadder(): Rung {
+  const s = ladderState().setting;
+  return s === 'auto' ? effectiveRung(toISO(new Date()), 'auto') : s;
+}
+
+export function getLadderAnswered(): Record<string, boolean> {
+  return ladderState().answered ?? {};
+}
+
+export function setLadder(setting: Rung): void {
+  writeJSON(KEYS.ladder, { ...ladderState(), setting });
+  notify();
+}
+
+/** رد على اقتراح السلّم. لو وافقت، الدرجة بتتغير. */
+export function answerLadder(key: string, rung: Rung | null): void {
+  const s = ladderState();
+  writeJSON(KEYS.ladder, { setting: rung ?? s.setting, answered: { ...s.answered, [key]: true } });
   notify();
 }
 
@@ -120,4 +155,54 @@ export function getTimer(): RunningTimer | null {
 export function setTimer(t: RunningTimer | null): void {
   writeJSON(KEYS.timer, t);
   notify();
+}
+
+/* المراجعة الأسبوعية: خانات «ملخص الأسبوع» لكل أسبوع */
+
+type Reviews = Record<string, string[]>;
+const validReviews = (v: unknown): v is Reviews => isObject(v) && Object.values(v).every(isStringArray);
+
+export function getReview(weekId: string): string[] {
+  return readJSON<Reviews>(KEYS.reviews, {}, validReviews)[weekId] ?? [];
+}
+
+export function setReview(weekId: string, values: string[]): void {
+  const all = readJSON<Reviews>(KEYS.reviews, {}, validReviews);
+  all[weekId] = values;
+  writeJSON(KEYS.reviews, all);
+}
+
+/* كراسة الأخطاء (جزء 21) */
+
+export interface Mistake {
+  id: string;
+  wrong: string;
+  right: string;
+  type: string;
+  count: number;
+  added: string;
+}
+
+const validMistakes = (v: unknown): v is Mistake[] =>
+  Array.isArray(v) && v.every((m) => isObject(m) && typeof m.id === 'string' && typeof m.count === 'number');
+
+export function getMistakes(): Mistake[] {
+  return readJSON<Mistake[]>(KEYS.mistakes, [], validMistakes);
+}
+
+export function setMistakes(list: Mistake[]): void {
+  writeJSON(KEYS.mistakes, list);
+  notify();
+}
+
+/* آخر نسخة احتياطية */
+
+export function getLastExport(): string | null {
+  return readJSON<{ lastExport: string | null }>(KEYS.backup, { lastExport: null }, (v): v is { lastExport: string | null } =>
+    isObject(v),
+  ).lastExport;
+}
+
+export function setLastExport(iso: string): void {
+  writeJSON(KEYS.backup, { lastExport: iso });
 }

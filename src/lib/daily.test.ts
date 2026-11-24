@@ -125,3 +125,14 @@ describe('التايمر بيحسب من وقت البداية', () => {
     expect(loggedMinutes(17 * 60_000 + 40_000)).toBe(18);
   });
 });
+
+describe('التمرين السريع', () => {
+  it('10 كلمات مختلفة', async () => {
+    const { pickRandom } = await import('./daily');
+    const { WORDS } = await import('../data');
+    const picked = pickRandom(WORDS, 10);
+    expect(picked).toHaveLength(10);
+    expect(new Set(picked.map((w) => w.id)).size).toBe(10);
+    expect(pickRandom([1, 2, 3], 10)).toHaveLength(3);
+  });
+});

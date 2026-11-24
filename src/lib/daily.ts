@@ -175,3 +175,14 @@ export function timerView(t: RunningTimer, now: number): TimerView {
 export function loggedMinutes(elapsedMs: number): number {
   return Math.round(elapsedMs / 60_000);
 }
+
+/* تمرين سريع: 10 كلمات عشوائية من غير تكرار */
+
+export function pickRandom<T>(list: readonly T[], n: number, rand: () => number = Math.random): T[] {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [a[i], a[j]] = [a[j] as T, a[i] as T];
+  }
+  return a.slice(0, Math.min(n, a.length));
+}

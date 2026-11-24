@@ -5,6 +5,7 @@ import { allUrls, section, type Block } from '../lib/markdown';
 import { plain } from '../lib/rich';
 import {
   DECISIONS,
+  HOURS,
   LINKS,
   LINK_GROUPS,
   MILESTONES,
@@ -290,5 +291,34 @@ describe('قوالب اليوم وأيام جزء 7', () => {
 
   it('كل محطة ليها اسم قصير', () => {
     for (const m of MILESTONES) expect(m.short.trim(), m.id).not.toBe('');
+  });
+});
+
+describe('الساعات (جزء 3)', () => {
+  it('نفس جدول «الحساب» بالظبط، والمجموع حوالي 177–222', () => {
+    const t = tables(3).find((x) => x.head[0] === 'الفترة');
+    const rows = t?.rows ?? [];
+    expect(rows.slice(0, -1)).toEqual(HOURS.periods.map((p) => [p.label, p.weeks, p.perWeek, p.total]));
+    expect(rows[rows.length - 1]?.[3]).toBe(`**حوالي ${HOURS.total.min}–${HOURS.total.max}**`);
+    expect(HOURS.periods.reduce((n, p) => n + p.min, 0)).toBe(HOURS.total.min);
+    expect(HOURS.periods.reduce((n, p) => n + p.max, 0)).toBe(HOURS.total.max);
+    expect(raw(3)).toContain(`حوالي **${HOURS.realistic.min}–${HOURS.realistic.max} ساعة**`);
+  });
+
+  it('الفترات ورا بعض، والأسابيع والأرقام مظبوطة', () => {
+    HOURS.periods.forEach((p, i) => {
+      expect(isISO(p.start) && isISO(p.end), p.label).toBe(true);
+      const weeks = (daysBetween(parseISO(p.start), parseISO(p.end)) + 1) / 7;
+      expect(Math.ceil(weeks), p.label).toBe(Number(p.weeks));
+      const [lo, hi = lo] = p.total.split('–').map(Number);
+      expect([p.min, p.max], p.label).toEqual([lo, hi]);
+      if (i > 0) expect(daysBetween(parseISO(HOURS.periods[i - 1]?.end as string), parseISO(p.start))).toBe(1);
+    });
+    expect(HOURS.periods[0]?.start).toBe(MILESTONES.find((m) => m.id === 'start')?.date);
+  });
+
+  it('الشجرة: آخر مرحلة عند 180 ساعة (جزء 2)', () => {
+    expect(HOURS.tree).toEqual([0, 45, 90, 135, 180]);
+    expect(raw(2)).toContain('لو ذاكرت 180 ساعة أو أكتر');
   });
 });

@@ -418,6 +418,11 @@ export const today: Screen = {
       const focusId = (document.activeElement as HTMLElement | null)?.dataset?.focus;
       const { rec, day } = state();
       const done = doneMinutes(day.tasks, rec.done ?? [], rec.minutes ?? {});
+      // للمتابعة والسلّم: دقايق اليوم ووقته في الخطة (اليوم العادي)
+      const full = rec.small ? planDay(now, { ladder: getLadder(), dayType: rec.type ?? null }).planned : day.planned;
+      if (!day.rest && !day.beforeStart && (rec.total !== done || rec.planned !== full)) {
+        updateDay(iso, (d) => ({ ...d, total: done, planned: full }), true);
+      }
       const first = day.dayType ? `ألماني النهارده. ${DAY_TYPE_NAMES[day.dayType]}.` : null;
       messages = MESSAGES.map((m, i) => (i === 0 && first ? first : m.text));
       root.innerHTML = [

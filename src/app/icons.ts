@@ -75,6 +75,15 @@ export const icons = {
     '<path d="M4.5 15v-3a7.5 7.5 0 0 1 15 0v3"/><rect x="3.5" y="14" width="4" height="6" rx="1.6"/><rect x="16.5" y="14" width="4" height="6" rx="1.6"/>',
     22,
   ),
+  /** سمّاعة بتطلّع صوت */
+  speaker: wrap(
+    '<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6"/><path d="M18 6.5a7.5 7.5 0 0 1 0 11" opacity=".6"/>',
+    22,
+  ),
+  /** نسخة احتياطية: سهم لتحت في صندوق */
+  download: wrap('<path d="M12 4v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 16.5v3h15v-3"/>', 20),
+  /** سهم لفوق في صندوق */
+  upload: wrap('<path d="M12 15V4"/><path d="M7.5 8.5 12 4l4.5 4.5"/><path d="M4.5 16.5v3h15v-3"/>', 20),
   /** سهم لتحت */
   chevron: wrap('<path d="M7 10l5 5 5-5"/>', 20),
 } as const;

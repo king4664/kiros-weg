@@ -1440,7 +1440,196 @@ button.btn {
   font-weight: 600;
 }
 
+/* الكلمات */
+.chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip-btn[aria-pressed='true'] {
+  background: rgb(var(--accent));
+  border-color: rgb(var(--accent));
+  color: rgb(var(--accent-ink));
+}
+.chip-btn[aria-pressed='true'] .icon {
+  color: inherit;
+}
+.word-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.word-card {
+  position: relative;
+  min-width: 0;
+}
+.word-face {
+  width: 100%;
+  min-height: 96px;
+  display: grid;
+  place-content: center;
+  gap: 4px;
+  padding: 12px 10px 12px 40px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgb(var(--ink) / 0.12);
+  background: var(--tint);
+  color: rgb(var(--ink));
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.word-face.turned {
+  border-color: rgb(var(--accent) / 0.7);
+}
+.word-face.turning {
+  animation: turn 220ms var(--ease);
+}
+@keyframes turn {
+  50% {
+    transform: scaleX(0.05);
+  }
+}
+.word-de {
+  font-size: 17px;
+  font-weight: 600;
+}
+.word-meaning {
+  font-size: 15px;
+  font-weight: 600;
+}
+.word-plural {
+  font-size: 13px;
+  color: rgb(var(--muted));
+}
+.word-card .speak {
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  color: rgb(var(--accent));
+}
+.word-card.big .word-face {
+  min-height: 200px;
+}
+.word-card.big .word-de {
+  font-size: 28px;
+}
+.word-card.big .word-meaning {
+  font-size: 22px;
+}
+.drill {
+  gap: 14px;
+}
+
+/* المتابعة */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.stat {
+  display: grid;
+  gap: 2px;
+  align-content: start;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  background: var(--tint);
+  text-align: center;
+}
+.stat strong {
+  font-size: 24px;
+  line-height: 1.2;
+}
+.stat strong small {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(var(--muted));
+}
+.stat span {
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgb(var(--muted));
+}
+.tree-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.tree {
+  flex: none;
+  width: 110px;
+  height: 110px;
+}
+.tree-ground {
+  fill: rgb(var(--ink) / 0.12);
+}
+.tree-trunk {
+  fill: none;
+  stroke: rgb(var(--ink) / 0.7);
+  stroke-linecap: round;
+}
+.tree-leaf {
+  fill: rgb(var(--accent) / 0.75);
+  stroke: rgb(var(--accent));
+  stroke-width: 1;
+}
+.tree-fruit {
+  fill: rgb(var(--glass));
+  stroke: rgb(var(--accent));
+  stroke-width: 1.2;
+}
+.form-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.form-grid .btn.wide {
+  grid-column: 1 / -1;
+  justify-content: center;
+}
+.mistakes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.mistake {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--tint);
+}
+.mistake .wrong {
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+.mistake .right {
+  font-weight: 600;
+}
+.backup-note {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+.file-btn {
+  position: relative;
+  overflow: hidden;
+}
+.file-btn input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.file-btn:focus-within {
+  outline: 2.5px solid rgb(var(--accent));
+  outline-offset: 3px;
+}
+
 @media (max-width: 380px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
   .daytype {
     grid-template-columns: 1fr;
   }

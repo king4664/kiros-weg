@@ -1,8 +1,9 @@
 import { links } from '../screens/links';
 import { plan } from '../screens/plan';
-import { progress, words } from '../screens/placeholders';
+import { progress } from '../screens/progress';
 import { settings } from '../screens/settings';
 import { today } from '../screens/today';
+import { words } from '../screens/words';
 import type { Screen, ScreenContext } from '../screens/types';
 import { de, el } from './dom';
 import { icons } from './icons';
