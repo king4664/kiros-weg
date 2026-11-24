@@ -14,6 +14,13 @@ const SCENE_NAMES: Record<Scene, string> = {
   mountains: 'جبال وضباب',
 };
 
+/** «جملة واحدة»، «جملتين»، «3 جمل»، «12 جملة» */
+function countSentences(n: number): string {
+  if (n === 1) return 'جملة واحدة';
+  if (n === 2) return 'جملتين';
+  return n <= 10 ? `${n} جمل` : `${n} جملة`;
+}
+
 /** جزء 3 */
 const LADDER_RULE = '**السلّم:** تطلع درجة بس لما تكمّل 6 أيام في الأسبوع. ولو فاتك يومين، تنزل درجة.';
 
@@ -126,7 +133,7 @@ export const settings: Screen = {
       if (!prev && next) setSplashDate(toISO(now));
       if (status) {
         status.textContent = next
-          ? `اتحفظت ${next.lines.length} جملة. جملة النهارده: «${sentenceFor(next, now) ?? ''}»`
+          ? `اتحفظت ${countSentences(next.lines.length)}. جملة النهارده: «${sentenceFor(next, now) ?? ''}»`
           : 'مفيش جمل، فكارت جملة اليوم مش هيظهر.';
       }
     });

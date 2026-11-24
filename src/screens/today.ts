@@ -141,7 +141,7 @@ function heroHtml(day: Day, today: Date, done: number): string {
     const parts = [];
     if (day.weekNo) parts.push(`الأسبوع ${day.weekNo}`);
     if (day.dayNo) parts.push(`اليوم ${day.dayNo}`);
-    parts.push(
+    if (!day.special?.tasks || day.special.kind === 'diagnosis') parts.push(
       day.finals
         ? 'أيام الفاينل: ساعة'
         : day.small
@@ -431,7 +431,7 @@ export const today: Screen = {
         wordsHtml(now),
         weekNoteHtml(day),
         followupHtml(day, rec),
-        day.beforeStart ? '' : claudeHtml(first),
+        day.beforeStart || day.rest ? '' : claudeHtml(first),
       ].join('');
       if (focusId) root.querySelector<HTMLElement>(`[data-focus="${focusId}"]`)?.focus({ preventScroll: true });
     };
