@@ -129,11 +129,13 @@ describe('المحطات', () => {
     expect(new Set(MILESTONES.map((m) => m.id)).size).toBe(MILESTONES.length);
   });
 
-  it('الفاينل 3–23 يناير، زي أسابيع 7–9', () => {
+  it('مواعيد الفاينل هي نفس أسابيع 7–9، ونفس فترة الفاينل في جزء 3', () => {
     const finals = MILESTONES.find((m) => m.id === 'finals');
     const w = WEEKS.find((x) => x.from === 7);
-    expect([finals?.date, finals?.end]).toEqual(['2027-01-03', '2027-01-23']);
+    const p = HOURS.periods.find((x) => x.label.includes('الفاينل') && !x.label.includes('قبل'));
+    expect(finals?.end).toBeDefined();
     expect([w?.start, w?.end]).toEqual([finals?.date, finals?.end]);
+    expect([p?.start, p?.end]).toEqual([finals?.date, finals?.end]);
   });
 });
 

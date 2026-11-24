@@ -679,6 +679,10 @@ a[href^='mailto:'] bdi,
 a[href^='tel:'] bdi {
   white-space: nowrap;
 }
+/* اللينكات اللي جوه الكلام: مساحة لمس 44px من غير ما السطر يكبر */
+a:not([class]) {
+  padding-block: 11px;
+}
 .prose-list {
   margin: 0;
   padding-inline-start: 22px;

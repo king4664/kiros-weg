@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- أيقونة Kiros Weg: شمس طالعة فوق بحر إسكندرية. رسمة أصلية. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3f4f86" />
+      <stop offset="0.5" stop-color="#9a7fa6" />
+      <stop offset="1" stop-color="#f3b892" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.56" r="0.42">
+      <stop offset="0" stop-color="#ffe6b8" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#ffe6b8" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4d6f9b" />
+      <stop offset="1" stop-color="#22385e" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#sky)" />
+  <rect width="512" height="512" fill="url(#glow)" />
+  <circle cx="256" cy="286" r="78" fill="#ffd9a0" />
+  <circle cx="256" cy="286" r="62" fill="#fff0cf" />
+  <path d="M0 300 H512 V512 H0 Z" fill="url(#sea)" />
+  <path d="M206 300 h100 l-12 14 h-76 z" fill="#ffe3b0" opacity="0.75" />
+  <path d="M224 330 h64 l-8 10 h-48 z" fill="#ffe3b0" opacity="0.55" />
+  <path d="M238 356 h36 l-5 8 h-26 z" fill="#ffe3b0" opacity="0.4" />
+  <g fill="none" stroke="#d8e7f3" stroke-linecap="round" stroke-width="11">
+    <path d="M84 344 c26 -16 52 -16 78 0 s52 16 78 0" opacity="0.55" />
+    <path d="M272 344 c26 -16 52 -16 78 0 s52 16 78 0" opacity="0.55" />
+    <path d="M44 398 c34 -20 68 -20 102 0 s68 20 102 0 s68 -20 102 0 s68 20 102 0" opacity="0.8" />
+  </g>
+</svg>
