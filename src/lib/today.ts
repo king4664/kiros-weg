@@ -186,7 +186,7 @@ export function planDay(date: Date, opts: DayOptions = {}): Day {
 
   let rows = rowsOf(template).filter((r) => !r.weekdays || r.weekdays.includes(weekday));
   if (preFinals && (template === 'nogym' || template === 'four')) rows = rows.filter((r) => !r.evening);
-  const planned = isWeek1 ? RUNG_MINUTES[0] : sum(rows);
+  const planned = sum(rows);
   return { ...base, dayType, template, tasks: withKeys(template, rows), planned };
 }
 

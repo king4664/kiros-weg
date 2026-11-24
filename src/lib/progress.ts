@@ -10,6 +10,8 @@ export interface DayStat {
   minutes: number;
   /** وقت اليوم في الخطة (اليوم العادي، مش اليوم الصغير) */
   planned: number;
+  /** كل مهام اليوم العادي اتعلّم عليها (مهم في الأيام اللي مهامها من غير دقايق، زي التشخيص) */
+  allDone?: boolean;
 }
 
 export type DayStatFn = (date: Date) => DayStat;
@@ -18,8 +20,11 @@ const START = HOURS.periods[0]?.start as string;
 
 const addDays = (d: Date, n: number) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
 
-/** اليوم الكامل: الدقايق وصلت لوقت اليوم في الخطة */
-export const isComplete = (s: DayStat) => s.study && s.planned > 0 && s.minutes >= s.planned;
+/**
+ * اليوم الكامل: الدقايق وصلت لوقت اليوم في الخطة.
+ * أو كل مهامه خلصت، علشان أيام زي التشخيص والامتحانات التجريبية مهامها من غير دقايق.
+ */
+export const isComplete = (s: DayStat) => s.study && ((s.planned > 0 && s.minutes >= s.planned) || !!s.allDone);
 /** اليوم الفايت: يوم مذاكرة صفر. اليوم الصغير مش فايت لأنه «بيتحسب يوم» (جزء 15). */
 export const isMissed = (s: DayStat) => s.study && s.minutes <= 0;
 
@@ -78,7 +83,14 @@ export function ladderSuggestion(
   for (const { w, until } of weeks) {
     const stats = weekStats(w, until, today, stat);
     if (stats.missed >= 2 && rung > 0 && !answered[`${w.id}:down`]) return { kind: 'down', weekId: w.id, stats };
-    if (stats.complete >= 6 && rung < 3 && !answered[`${w.id}:up`]) return { kind: 'up', weekId: w.id, stats };
+    if (stats.complete >= 6 && rung < 3 && !answered[`${w.id}:up`]) {
+      // يوم الـ4 ساعات «بعد أسبوعين منتظمين» (جزء 3): الأسبوع اللي قبله كمان لازم يكون 6 أيام كاملة
+      if (rung === 2) {
+        const before = planWeek(addDays(w.start, -1));
+        if (!before || weekStats(before, before.end, today, stat).complete < 6) continue;
+      }
+      return { kind: 'up', weekId: w.id, stats };
+    }
   }
   return null;
 }

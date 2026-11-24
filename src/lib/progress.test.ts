@@ -17,11 +17,11 @@ import {
 const day = (y: number, m: number, d: number) => new Date(y, m - 1, d, 20, 0);
 
 /** أيام مذاكرة فيها دقايق معيّنة. الجمعة راحة إلا 27 نوفمبر. */
-function fake(minutes: Record<string, number>, planned = 60): DayStatFn {
+function fake(minutes: Record<string, number>, planned = 60, allDone: Record<string, boolean> = {}): DayStatFn {
   return (d: Date): DayStat => {
     const iso = toISO(d);
     const study = iso >= '2026-11-23' && (d.getDay() !== 5 || iso === '2026-11-27');
-    return { study, minutes: minutes[iso] ?? 0, planned: study ? planned : 0 };
+    return { study, minutes: minutes[iso] ?? 0, planned: study ? planned : 0, allDone: allDone[iso] ?? false };
   };
 }
 
@@ -50,6 +50,26 @@ describe('السلّم (جزء 3)', () => {
     expect(s).toMatchObject({ kind: 'up', weekId: '2026-11-23', stats: { complete: 6 } });
     // ولسه بيظهر أول الأسبوع الجاي لو مارديتش
     expect(ladderSuggestion(day(2026, 11, 29), 0, fake(fullWeek1), {})?.kind).toBe('up');
+  });
+
+  it('يوم التشخيص كامل لو كل مهامه خلصت، حتى لو الدقايق أقل', () => {
+    const mins = { ...fullWeek1, '2026-11-28': 25 };
+    expect(ladderSuggestion(day(2026, 11, 28), 0, fake(mins), {})).toBeNull();
+    expect(ladderSuggestion(day(2026, 11, 28), 0, fake(mins, 60, { '2026-11-28': true }), {})?.kind).toBe('up');
+  });
+
+  it('يوم الـ4 ساعات بعد أسبوعين منتظمين بس (جزء 3)', () => {
+    const w3: Record<string, number> = {};
+    for (const d of ['2026-12-06', '2026-12-07', '2026-12-08', '2026-12-09', '2026-12-10', '2026-12-12']) w3[d] = 180;
+    const w4: Record<string, number> = {};
+    for (const d of ['2026-12-13', '2026-12-14', '2026-12-15', '2026-12-16', '2026-12-17', '2026-12-19']) w4[d] = 180;
+    const done = { '2026-11-29:up': true };
+    // أسبوع واحد كامل على درجة 2: لسه
+    expect(ladderSuggestion(day(2026, 12, 12), 2, fake({ ...fullWeek2, ...w3 }, 180), done)).toBeNull();
+    // أسبوعين ورا بعض: تطلع
+    expect(ladderSuggestion(day(2026, 12, 19), 2, fake({ ...w3, ...w4 }, 180), done)).toMatchObject({ kind: 'up', weekId: '2026-12-13' });
+    // ومن درجة 1 لـ2 أسبوع واحد كفاية
+    expect(ladderSuggestion(day(2026, 12, 12), 1, fake({ ...fullWeek2, ...w3 }, 180), done)?.kind).toBe('up');
   });
 
   it('5 أيام كاملة بس: مفيش اقتراح', () => {

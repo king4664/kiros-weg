@@ -2,11 +2,9 @@ import planMd from '../../german-plan.md?raw';
 import { backupDue, exportNow, lastExportText } from '../app/backupui';
 import {
   CHANGED,
-  answerLadder,
   getAllDays,
   getDay,
   getLadder,
-  getLadderAnswered,
   getLastLesson,
   getMistakes,
   getReview,
@@ -17,6 +15,7 @@ import {
 } from '../app/daystore';
 import { esc, rich } from '../app/dom';
 import { icons } from '../app/icons';
+import { handleLadderClick, ladderCard } from '../app/ladderui';
 import { dayMinutes, makeDayStat, totalMinutes } from '../app/stats';
 import { HOURS, MILESTONES, SPECIAL_DAYS } from '../data';
 import { daysBetween, formatDate, parseISO, toISO } from '../lib/dates';
@@ -25,7 +24,6 @@ import {
   expectedHours,
   fillSummary,
   isComplete,
-  ladderSuggestion,
   planWeek,
   streak,
   summaryTemplate,
@@ -178,27 +176,6 @@ function numbersHtml(today: Date, rung: Rung): string {
       <div>
         <h2 class="card-title">المرحلة ${tree.stage} من 5</h2>
         <p class="small muted">${tree.next !== null ? `الشجرة بتكبر تاني عند ${tree.next} ساعة.` : 'الشجرة كبرت خالص: 180 ساعة أو أكتر.'}</p>
-      </div>
-    </section>`;
-}
-
-function ladderHtml(today: Date, rung: Rung): string {
-  const s = ladderSuggestion(today, rung, makeDayStat(), getLadderAnswered());
-  if (!s) return '';
-  const to = (s.kind === 'up' ? rung + 1 : rung - 1) as Rung;
-  const text =
-    s.kind === 'up'
-      ? `كمّلت ${s.stats.complete} أيام كاملة في الأسبوع. تطلع درجة؟`
-      : `فاتك ${s.stats.missed} أيام في الأسبوع. تنزل درجة؟`;
-  return `
-    <section class="card special">
-      <p class="eyebrow">السلّم</p>
-      <p><strong>${text}</strong></p>
-      <p class="small">من «${esc(RUNG_NAMES[rung])}» لـ«${esc(RUNG_NAMES[to])}».</p>
-      <p class="small muted">${rich('**السلّم:** تطلع درجة بس لما تكمّل 6 أيام في الأسبوع. ولو فاتك يومين، تنزل درجة.')}</p>
-      <div class="task-actions">
-        <button type="button" class="btn" data-ladder="yes" data-key="${s.weekId}:${s.kind}" data-to="${to}">${s.kind === 'up' ? 'أيوه، اطلع' : 'أيوه، انزل'}</button>
-        <button type="button" class="ghost-btn" data-ladder="no" data-key="${s.weekId}:${s.kind}">لأ</button>
       </div>
     </section>`;
 }
@@ -423,7 +400,7 @@ export const progress: Screen = {
               : `<p class="small muted">${lastExportText()}</p>`
           }
         </section>
-        ${ladderHtml(today, rung)}
+        ${ladderCard(today)}
         ${numbersHtml(today, rung)}
         ${logHtml(today)}
         ${reviewHtml(today)}
@@ -488,12 +465,7 @@ export const progress: Screen = {
     root.addEventListener('click', (e) => {
       const el = e.target as HTMLElement;
 
-      const lad = el.closest<HTMLElement>('[data-ladder]');
-      if (lad) {
-        const key = lad.dataset.key as string;
-        answerLadder(key, lad.dataset.ladder === 'yes' ? (Number(lad.dataset.to) as Rung) : null);
-        return;
-      }
+      if (handleLadderClick(el)) return;
 
       if (el.closest('[data-export]')) {
         exportNow();

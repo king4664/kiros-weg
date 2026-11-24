@@ -32,11 +32,12 @@ export async function importFile(file: File): Promise<string | null> {
   return null;
 }
 
-/** تذكير كل أسبوع: لو فيه بيانات ومافيش نسخة من 7 أيام أو أكتر */
+/** تذكير كل أسبوع: آخر نسخة من 7 أيام أو أكتر، ولو مفيش نسخة خالص، بعد أسبوع من أول يوم اتسجل */
 export function backupDue(today = new Date()): boolean {
   const last = getLastExport();
   if (last) return daysBetween(parseISO(last), today) >= 7;
-  return Object.keys(getAllDays()).length > 0 || !!getSentences();
+  const first = [...Object.keys(getAllDays()), getSentences()?.anchor].filter((x): x is string => !!x).sort()[0];
+  return !!first && daysBetween(parseISO(first), today) >= 7;
 }
 
 export function lastExportText(): string {

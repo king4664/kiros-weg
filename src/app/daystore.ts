@@ -36,6 +36,8 @@ export interface DayRecord {
   total?: number;
   /** وقت اليوم في الخطة (اليوم العادي) */
   planned?: number;
+  /** كل مهام اليوم العادي اتعلّم عليها */
+  allDone?: boolean;
 }
 
 type Days = Record<string, DayRecord>;

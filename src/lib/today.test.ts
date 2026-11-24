@@ -16,8 +16,9 @@ describe('أيام المواصفات (المرحلة 3)', () => {
     expect(d.rest).toBe(false);
     expect(d.special?.kind).toBe('compensation');
     expect(d.planDay?.label).toBe('الجمعة 27 (اليوم 5، تعويض)');
-    // النطق من الاتنين للخميس بس
+    // النطق من الاتنين للخميس بس، فوقت اليوم هو وقت مهامه
     expect(d.tasks.some((t) => t.kind === 'pronunciation')).toBe(false);
+    expect(d.planned).toBe(50);
   });
 
   it('السبت 28 = التشخيص (استماع وقراءة)', () => {

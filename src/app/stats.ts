@@ -30,10 +30,12 @@ export function makeDayStat(): DayStatFn {
     const iso = toISO(d);
     const rec = days[iso] ?? {};
     const plan = planDay(d, { ladder, dayType: rec.type ?? null });
+    const done = new Set(rec.done ?? []);
     return {
       study: !plan.rest && !plan.beforeStart && iso >= first,
       minutes: dayMinutes(rec, d, ladder),
       planned: rec.planned ?? plan.planned,
+      allDone: rec.allDone ?? (plan.tasks.length > 0 && plan.tasks.every((t) => done.has(t.key))),
     };
   };
 }

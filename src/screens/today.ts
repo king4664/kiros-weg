@@ -12,6 +12,7 @@ import {
 } from '../app/daystore';
 import { esc, rich } from '../app/dom';
 import { icons } from '../app/icons';
+import { handleLadderClick, ladderCard } from '../app/ladderui';
 import { DECISIONS, LINKS, MILESTONES, TEMPLATES, type Link } from '../data';
 import {
   fillFollowup,
@@ -419,15 +420,25 @@ export const today: Screen = {
       const { rec, day } = state();
       const done = doneMinutes(day.tasks, rec.done ?? [], rec.minutes ?? {});
       // للمتابعة والسلّم: دقايق اليوم ووقته في الخطة (اليوم العادي)
-      const full = rec.small ? planDay(now, { ladder: getLadder(), dayType: rec.type ?? null }).planned : day.planned;
-      if (!day.rest && !day.beforeStart && (rec.total !== done || rec.planned !== full)) {
-        updateDay(iso, (d) => ({ ...d, total: done, planned: full }), true);
+      const normal = rec.small ? planDay(now, { ladder: getLadder(), dayType: rec.type ?? null }) : day;
+      const doneSet = new Set(rec.done ?? []);
+      const allDone = normal.tasks.length > 0 && normal.tasks.every((x) => doneSet.has(x.key));
+      if (!day.rest && !day.beforeStart && (rec.total !== done || rec.planned !== normal.planned || rec.allDone !== allDone)) {
+        updateDay(iso, (d) => ({ ...d, total: done, planned: normal.planned, allDone }), true);
       }
-      const first = day.dayType ? `ألماني النهارده. ${DAY_TYPE_NAMES[day.dayType]}.` : null;
+      // أول رسالة كل يوم: «ألماني النهارده» ونوع اليوم (أول الخطة)
+      const first = day.dayType
+        ? `ألماني النهارده. ${DAY_TYPE_NAMES[day.dayType]}.`
+        : day.finals
+          ? `ألماني النهارده. ${DAY_TYPE_NAMES.college}.`
+          : day.rung < 2 || day.special?.tasks
+            ? 'ألماني النهارده.'
+            : null;
       messages = MESSAGES.map((m, i) => (i === 0 && first ? first : m.text));
       root.innerHTML = [
         sentenceHtml(now),
         heroHtml(day, now, done),
+        ladderCard(now),
         dayTypeHtml(day),
         specialHtml(day),
         planTextHtml(day),
@@ -489,6 +500,7 @@ export const today: Screen = {
 
     root.addEventListener('click', (e) => {
       const el = e.target as HTMLElement;
+      if (handleLadderClick(el)) return;
 
       const timer = el.closest<HTMLElement>('[data-timer]');
       if (timer) {
