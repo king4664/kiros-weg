@@ -34,6 +34,9 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,woff2,svg,png,ico,txt}'],
         navigateFallback: 'index.html',
         cleanupOutdatedCaches: true,
+        // الـservice worker الجديد بيمسك الصفحة المفتوحة على طول، من غير ما تقفلها وتفتحها
+        clientsClaim: true,
+        skipWaiting: true,
       },
     }),
   ],
